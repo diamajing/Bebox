@@ -1,0 +1,8 @@
+<%= form_tag url_for(params), method: :get, class: "form-inline form-search phone-a-center", role: "form" do %>
+	<div class="form-group">
+		<%= text_field_tag :search, params[:search], :placeholder => "Suchbegriff", :class => "form-control", :autofocus => true %>
+	</div>
+	<%= hidden_field_tag :filter, params[:filter] if params[:filter] %>
+	<%= hidden_field_tag :content_group_id, params[:content_group_id] if params[:content_group_id] %>
+	<button type="submit" class="btn btn-danger"><%= icon("search")%> Suchen</button>
+<% end %>

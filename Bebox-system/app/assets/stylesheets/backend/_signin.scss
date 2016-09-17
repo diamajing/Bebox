@@ -1,0 +1,72 @@
+.v-centered {
+	height: 100vh;
+	display: flex !important;
+	flex-direction: row;
+
+	.v-centered-inner {
+		margin-top: auto;
+	    margin-bottom: auto;
+	    width: 100%;
+
+	    h4 {
+	    	font-family: 'Droid Serif', 'Georgia', serif;
+	    	font-weight: 700;
+	    }
+
+	    .row {
+	    }
+
+	    .panel {
+			border: none;
+			background-image: image-url("dark_wood.png");
+			padding: 50px;
+			border-radius: 0;
+
+			.panel-body {
+				padding: 0;
+
+				form {
+
+					.form-group {
+
+						input {
+							border-radius: 0;
+							height: 50px;
+							margin-top: 1px;
+
+							&.btn {
+								width: 100%;
+								background-color: rgba(194, 140, 2, 0.4);
+								border: none;
+								margin-top: 2px;
+								color: rgba(255,255,255,0.8);
+
+								&:hover {
+									background-color: rgba(229, 166, 0, 0.4);
+									color: rgba(255,255,255,1);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.panel-footer {
+				background-color: transparent;
+				border: none;
+				color: #fff;
+				font-weight: 300;
+				padding-bottom: 0;
+
+				a {
+					color: rgba(255,255,255,0.8);
+					text-decoration: underline;
+
+					&:hover {
+						color: rgba(255,255,255,0.8);
+					}
+				}
+			}
+	    }
+	}
+}

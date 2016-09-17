@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  	<title>Bebox System</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Pacifico">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+	<%= stylesheet_link_tag    'backend', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'backend', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<link rel="shortcut icon" type="image/x-icon" href="<%= image_path "logo.png" %>" />
+</head>
+<body>
+    <div id="st-container" class="st-container ">
+      <div class="st-pusher">
+        <nav class="st-menu vc-navigation st-effect-3" id="menu-3">
+          <%= render 'layouts/admin/navigation' %>
+        </nav>
+        <div class="st-content">
+          <div class="st-content-inner">
+            <div class="vc-content">
+              <nav class="vc-navigation">
+                <%= render 'layouts/admin/navigation' %>
+              </nav>
+              <section class="toolbar">
+                <div id="st-trigger-effects" class="column">
+                  <button data-effect="st-effect-3" class="btn btn-danger"><i class="fa fa-bars"></i></button>
+                </div>
+                <span class="page-description">
+                    <% if Rails.env == "staging" %>
+                      <%= content_tag "span", "STAGING SYSTEM", style: "color:red;" %>
+                    <% else %>
+                      <%= content_tag "span", "Bebox Management system" %>
+                    <% end %>
+                </span>
+                <ul class="badge-list pull-right">
+                  <li>
+                  
+                  </li>
+                </ul>
+              </section>
+              <section class="vc-content-inner">
+                <div class="row" style="margin: 0">
+                  <div class="container white">
+                    <div class="col-xs-12 text-phone-center">
+                      <% if content_for? :pagename %>
+                      <h1><%= yield :pagename %></h1>
+                      <% end %>
+                      <% if content_for? :breadcrumb %>
+                      <ol class="breadcrumb phone-a-center">
+                      <%= yield :breadcrumb %>
+                      </ol>
+                      <% end %>
+                    </div>
+
+                    <div class="col-xs-12 content-toolbar text-right  text-phone-center">
+                      <% if content_for? :search %>
+                      <div class="c-searchbar">
+                        <%= yield :search %>
+                      </div>
+                      <% end %>
+                      <% if content_for? :toolbar %>
+                      <div class="c-toolbar text-right text-phone-center">
+                          <%= yield :toolbar %>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row" style="margin: 0">
+                  <div class="container">
+                    <div class="col-md-12">
+                      <% flash.each do |name, msg| %>
+                        <% if msg.is_a?(String) %>
+                          <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <%= content_tag :div, msg, id:"flash_#{name}" %>
+                          </div>
+                        <% end %>
+                      <% end %>
+	
+                     
+
+                    </div>
+                  </div>
+                </div>
+                <%= yield %>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="theModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content modal-content-custom">
+          </div>
+      </div>
+    </div>
+    <div class="modal fade" id="contentModal" tabindex="-1" role="dialog" aria-labelledby="theModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content modal-content-custom">
+          </div>
+      </div>
+    </div>
+
+    <%= yield :js %>
+
+</body>
+</html>

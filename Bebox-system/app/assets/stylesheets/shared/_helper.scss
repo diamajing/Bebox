@@ -1,0 +1,243 @@
+// Text-Align Helper
+// phone, tablet-portrait, tablet-landscape-desktop, large-desktop, non-retina, retina
+@include respondto (phone) {
+	.phone-a-left		{text-align: left !important;}
+	.phone-a-center		{text-align: center !important;}
+	.phone-a-right		{text-align: right !important;}
+}
+
+@include respondto (tablet-portrait) {
+	.tablet-portrait-a-left		{text-align: left !important;}
+	.tablet-portrait-a-center		{text-align: center !important;}
+	.tablet-portrait-a-right		{text-align: right !important;}
+}
+
+@include respondto (tablet-landscape-desktop) {
+	.tablet-landscape-desktop-a-left		{text-align: left !important;}
+	.tablet-landscape-desktop-a-center		{text-align: center !important;}
+	.tablet-landscape-desktop-a-right		{text-align: right !important;}
+}
+
+@include respondto (large-desktop) {
+	.large-desktop-a-left		{text-align: left !important;}
+	.large-desktop-a-center		{text-align: center !important;}
+	.large-desktop-a-right		{text-align: right !important;}
+}
+
+@include respondto (phone) {
+	.text-phone-center 		{text-align: center;}
+	.text-phone-left 		{text-align: left;}
+	.text-phone-right 		{text-align: right;}
+}
+
+hr {
+	border-color: $gray-lighter;
+
+	&.slim {
+		width: 100px;
+		margin: 1em auto 1em auto;
+	}
+}
+
+.datepicker {
+	z-index: 99999 !important;
+}
+
+.breadcrumb {
+	margin-bottom: 0;
+	background-color: white;
+}
+
+.fa-active {
+	color: $brand-primary !important;
+}
+
+.active-filter {
+	font-weight: bold;
+}
+
+.price {
+	white-space: nowrap;
+}
+
+a {
+   outline: 0 !important;
+}
+
+.field_with_error {
+	position: relative;
+	margin-top: 1.65em;
+
+	> input {
+		border-color: red;
+	}
+
+	> span.help-inline {
+		position: absolute;
+		background-color: red;
+		padding: 2px 5px;
+		font-size: 11px;
+		text-transform: uppercase;
+		display: block;
+		top: -1.65em;
+		color: white;
+
+		@include respondto(phone) {
+			margin-left: 0;
+		}
+	}
+}
+
+
+input.bigger {
+	
+	+ div.field_with_error {
+		margin-top: 0em;
+
+		> span.help-inline {
+			display: none;
+		}
+	}
+}
+
+form.form-horizontal > .alert,
+#error_explanation {
+
+	padding: 2em;
+	border: 1px dotted $brand-danger;
+	margin-bottom: 1em;
+	position: relative;
+
+	h2 {
+		display: none;
+	}
+
+	> .close {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+	}
+}
+
+@include respondto (phone) {
+	.hidden-phone {
+		display: none;
+	}	
+
+	.col-xs-right {
+		text-align: right;
+	}
+}
+
+form input {
+	font-weight: 400;
+}
+
+ul {
+	&.no-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			padding: 0;
+			margin: 0;
+			clear: left;
+		}
+	}
+
+	&.inline {
+		li {
+			display: inline-block !important;
+			clear: none;
+		}
+	}
+}
+
+body.cart {
+	margin-top: 0em;
+	@include transition-property(margin-top);
+	@include transition-duration(0.25s);
+	@include transition-timing-function(ease-in-out);
+}
+
+b.ttu,
+strong.ttu {
+	text-transform: uppercase;
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.flash-message {
+	
+	position: absolute;
+	top: -2.7em;
+	left: 0;
+	width: 100%;
+
+	.alert {
+		position: absolute;
+		top: 0em;
+		left: 0;
+		width: 100%;
+		padding: 0.35em 0.5em 0.1em 2em;
+		text-align: center;
+
+		#flash_notice,
+		#flash_alert {
+			vertical-align: sub;
+		}
+
+		background-color: $brand-primary;
+		background-color: rgba($brand-primary, 0.9);
+		
+		* {
+			color: white;
+			display: inline-block;
+		}
+
+		button {
+			float: right;
+			margin: 0 0 5px 10px;
+			color: white;
+			background-color: $brand-primary;
+			
+			border: 1px solid white;
+			width: 30px;
+			height: 30px;
+			line-height: 20px;
+		}
+	}
+}
+
+.js-body-alert {
+	margin-top: 2.7em !important;
+	@include transition-property(margin-top);
+	@include transition-duration(0.5s);
+	@include transition-timing-function(ease-in);
+
+	.flash-message {
+		top: 0em;
+		z-index: 999;
+		@include transition-property(top);
+		@include transition-duration(0.5s);
+		@include transition-timing-function(ease-in);
+	}
+}
+
+.nav-bar + section {
+	margin-top: 0 !important;
+}
+
+.btn-xs-group.open {
+	position: relative;
+}

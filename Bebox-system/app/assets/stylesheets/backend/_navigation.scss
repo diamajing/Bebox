@@ -1,0 +1,176 @@
+.vc-content,
+.vc-navigation,
+.st-content-inner {
+	height: 100%;
+}
+
+.vc-navigation {
+	width: 22em;
+	position: fixed;
+	z-index: 50;
+	left: 0;
+	top: 0;
+	background-color: $gray;
+	overflow: scroll;
+	padding-bottom: 0em;
+
+	@include respondto (phone, tablet-portrait, tablet-landscape-desktop) {
+    	padding-bottom: 3em;
+    }
+
+	hr {
+		border-color: darken($gray,3%);
+	}
+
+	.form-search {
+		padding: 0 2em;
+		margin-bottom: 1.5em;
+
+		.form-group > input {
+			width: 175px;
+		}
+	}
+
+	@include respondto (phone, tablet-portrait, tablet-landscape-desktop) {
+    	display: none;
+    }
+
+    &.st-menu {
+		@include respondto (phone, tablet-portrait, tablet-landscape-desktop) {
+	    	display: block;
+	    }
+    }
+
+	.profile-box {
+		padding: 4em 2em 2em 2em ;
+		position: relative;
+
+		.image {
+			float: left;
+			margin-right: 1em;
+		}
+
+		.profile {
+			strong {
+				color: rgba(white,0.85);
+				display: block;
+			}
+
+			small {
+				color: rgba(white,0.5);
+			}
+		}
+	}
+
+	h2 {
+		color: rgba(0,0,0,0.4);
+		font-weight: 300;
+		padding: 0.55em 0 0.5em 1em;
+	}
+
+	ul {
+		margin: 0; padding: 0;
+	}
+
+	li {
+		margin: 0; padding: 0;
+
+		a {
+			color: rgba(white,0.6);
+			display: block;
+			line-height: 5rem;
+			font-size: 1.3rem;
+			font-weight: 600;
+			height: 5rem;
+			padding-left: 3rem;
+			border-top: 1px solid $gray-dark;
+
+			&:hover,
+			&:active,
+			&.active,
+			&:focus {
+				text-decoration: none;
+				color: white;
+				background-color: darken($gray,5%);
+			}
+
+			&.fa:before {
+				padding-right: 0.75em;
+
+			}
+		}
+
+		&:last-child {
+			a {
+				border-bottom: 1px solid $gray-dark;
+			}
+		}
+
+		ul {
+			display: none;
+			border-left: 4px solid $brand-danger;
+			a {
+				padding-left: 4.8rem;
+				font-size: 1.3rem;
+				color: rgba(white,0.6);
+				line-height: 4rem;
+				height: 4rem;
+				background-color: darken($gray,3%);
+				border: none;
+			}
+		}
+
+		&.open {
+			ul {
+				display: block ;
+			}
+
+			.js-toggle-sub {
+				color: rgba(white,0.9);
+				background-color: darken($gray,5%);
+			}
+		}
+	}
+
+
+
+	.boss-nav {
+		position: absolute;
+		bottom: 3em;
+		z-index: 99;
+		width: 100%;
+		border-bottom: 1px solid darken($gray,3%);
+
+
+		@include respondto (phone, tablet-landscape-desktop) {
+	    	position: relative;
+	    	top: 5em;
+	    }
+
+	    &:after {
+	    	position: absolute;
+	    	content: "Made with Love by Videri Concept";
+	    	text-transform: uppercase;
+	    	font-size: 10px;
+	    	bottom: -2.8em;
+	    	left: 0;
+	    	width: 100%;
+	    	text-align: center;
+	    	font-weight: 300;
+	    	color: rgba(white,0.15);
+	    }
+
+		a {
+			border: none !important;
+			color: rgba(white,0.25);
+
+			&:hover,
+			&:active
+			&:focus {
+				text-decoration: none;
+				color: rgba(white,0.4);
+				background-color: transparent;
+			}
+		}
+	}
+}

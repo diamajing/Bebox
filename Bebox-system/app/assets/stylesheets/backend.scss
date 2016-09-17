@@ -1,0 +1,77 @@
+// Place all the styles related to the backend controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ // Font-Awesome
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ // Admin variables
+ @import "backend/variables";
+ @import "bootstrap/variables";
+
+
+ // Bootstrap Mixins
+ @import "bootstrap/mixins";
+
+ // Reset and dependencies
+ @import "bootstrap/glyphicons";
+ @import "bootstrap/normalize";
+ @import "bootstrap/print";
+
+ // Core CSS
+ @import "bootstrap/buttons";
+ @import "bootstrap/code";
+ @import "bootstrap/forms";
+ @import "bootstrap/grid";
+ @import "bootstrap/scaffolding";
+ @import "bootstrap/tables";
+ @import "bootstrap/type";
+
+ // Components
+ @import "bootstrap/alerts";
+ @import "bootstrap/badges";
+ @import "bootstrap/breadcrumbs";
+ @import "bootstrap/button-groups";
+ @import "bootstrap/close";
+ @import "bootstrap/component-animations";
+ @import "bootstrap/dropdowns";
+ @import "bootstrap/input-groups";
+ @import "bootstrap/jumbotron";
+ @import "bootstrap/labels";
+ @import "bootstrap/list-group";
+ @import "bootstrap/media";
+ @import "bootstrap/navbar";
+ @import "bootstrap/navs";
+ @import "bootstrap/pager";
+ @import "bootstrap/pagination";
+ @import "bootstrap/panels";
+ @import "bootstrap/progress-bars";
+ @import "bootstrap/responsive-embed";
+ @import "bootstrap/thumbnails";
+ @import "bootstrap/wells";
+
+ // Components w/ JavaScript
+ @import "bootstrap/carousel";
+ @import "bootstrap/modals";
+ @import "bootstrap/popovers";
+ @import "bootstrap/tooltip";
+
+ // Utility classes
+ @import "bootstrap/utilities";
+ @import "bootstrap/responsive-utilities";
+
+ // Shared
+ @import "shared/mixins";
+ @import "shared/helper";
+ @import "shared/lib/select2";
+ @import "shared/lib/select2.bootstrap";
+
+ // Animated Off Canvas Sidebar
+ @import "backend/sidebar/component";
+
+ // admin specific styles
+ @import "backend/content";
+ @import "backend/signin";
+ @import "backend/navigation";
+ @import "backend/toolbar";

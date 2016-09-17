@@ -1,0 +1,16 @@
+<div class="profile-box row">
+  <div class="profile col-md-12">
+    <%= image_tag "logo.png", class: "image", width: 50%>
+    <div class="profile">
+      <strong>Amine Belkhiria</strong>
+      <small>amine.belkhiria@yahoo.fr</small><br>
+      <small> <%= link_to "Abmelden" %></small>
+    </div>
+    <% if Rails.env.staging? %>
+      (STAGING)
+    <% end %>
+  </div>
+</div>
+<ul>
+    <li><%= link_to "Tableau de bord", admin_path, class: "fa fa-pie-chart #{menu_active("pages")}" %></li>
+</ul>

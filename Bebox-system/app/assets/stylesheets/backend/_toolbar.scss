@@ -1,0 +1,246 @@
+.toolbar {
+	position: fixed;
+	z-index:20;
+	width: 100%;
+	width: calc(100% - 22em);
+	background-color: #F3F3F4;
+	border-bottom: 1px solid #cdcdcd;
+	height: 5em;
+	left: 22em;
+
+	@include respondto (phone, tablet-portrait, tablet-landscape-desktop) {
+    	left: 0;
+    	width: 100%;
+    	z-index: 999;
+    }
+
+	#st-trigger-effects {
+		margin: 1.2em 0 0 1.2em;
+		display: none;
+
+		button {
+			outline: none;
+		}
+
+		@include respondto (phone, tablet-portrait, tablet-landscape-desktop){
+			display: inline-block;
+		}
+	}
+
+	span.page-description {
+		line-height: 5em;
+		display: inline-block;
+		padding-left: 2em;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: rgba($gray,0.8);
+
+		@include respondto (phone, tablet-portrait, tablet-landscape-desktop) {
+	    	display: none;
+	    }
+	}
+
+	.badge-list {
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: inline-block;
+		}
+
+		a {
+			color: $gray;
+			display: inline-block;
+			margin-top: 0.5em;
+			line-height: 4em;
+			padding: 0 0.5em;
+			border-left: 1px solid darken(#eeeeee, 10%);
+			text-decoration: none;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: darken(#EEEEEE,5%)
+			}
+
+			.fa {
+				font-size: 1.3em;
+				padding: 0 0.3em 0 0;
+				color: rgba($gray,0.5);
+			}
+
+			small,
+			span.dd-text {
+				display: none;
+			}
+
+			span.caret {
+				display:inline-block;
+				line-height: 1em;
+			}
+
+
+			@include respondto (tablet-landscape-desktop) {
+		    	padding: 0 1.5em;
+
+		    	.fa {
+		    		padding: 0 0.15em 0 0;
+		    	}
+
+		    	.badge {
+		    		font-size: 0.8em;
+		    		display: none;
+		    	}
+		    }
+
+	    	@include respondto (phone, tablet-portrait) {
+	        	padding: 0 0.6em;
+
+	        	.fa {
+	        		padding: 0 0.15em 0 0;
+	        	}
+
+	        	.badge {
+	        		font-size: 0.8em;
+	        		display: none;
+	        	}
+	        }
+
+        	@include respondto (desktop) {
+            	padding: 0 0.4em;
+            }
+
+	        @include respondto (large-desktop) {
+
+	        	.fa {
+	        		display: none;
+	        	}
+
+	        	line-height: 1.2em;
+	        	padding-top: 0.7em;
+	        	padding-bottom: 0.7em;
+	        	text-align: center;
+	        	small{
+	        		padding-top: 0.25em;
+	        		display: block;
+	        	}
+
+	        	span.dd-text,
+	        	span.caret {
+					display: inline-block !important;
+	        	}
+	        }
+		}
+
+		li:first-child {
+			a {
+				border-left: 0;
+			}
+		}
+
+		.badge {
+			background-color: $brand-danger;
+		}
+
+		.dropdown.right {
+			ul {
+				right: 0;
+				left: auto;
+				z-index: 999;
+			}
+
+			a {
+				font-size: 0.85em;
+				cursor: pointer;
+
+				> .fa {
+					display: inline-block;
+					color: $brand-danger;
+					font-size: 1.65em;
+					padding-bottom: 0.15em;
+
+					@include respondto (large-desktop) {
+						display: block;
+						padding-bottom: 0.15em;
+					}
+
+					@include respondto (phone, tablet-portrait, desktop) {
+						padding-top: 0.2em;
+					}
+				}
+			}
+
+			> a {
+				margin-top: 0;
+
+				@include respondto (phone, tablet-portrait, desktop) {
+					padding: 0 1.2em 0 1.5em;
+				}
+			}
+
+			li {
+				display: block;
+				> a {
+					text-align: left;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.content-toolbar {
+	.c-toolbar {
+		display: inline-block;
+		border: 1px solid $gray-lighter;
+		//@include border-radius(0.25em);
+		padding: 1em;
+		margin: 0 0 1em 0;
+
+		@include respondto (phone) {
+			left: 0;
+			width: 100%;
+			margin-top: 2em;
+		}
+
+		.btn {
+			// background-color: $brand-danger !important;
+			// color: white;
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 11px !important;
+			border-color: $gray-lighter;
+			padding:  0.5em 1em;
+
+			&.btn-xs-group {
+				background-color: white !important;
+				padding: 0 !important;
+				border: none !important;
+			}
+		}
+
+		.helper-gray {
+			background-color: $gray-lighter !important;
+			color: $gray !important;
+		}
+	}
+
+	.c-searchbar {
+		.btn {
+			background-color: $gray !important;
+			color: white;
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 11px !important;
+			border-color: $gray-lighter;
+			padding:  0.5em 1em;
+		}
+	}
+
+	&:last-child {
+
+	}
+}
