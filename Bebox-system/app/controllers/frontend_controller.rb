@@ -1,3 +1,6 @@
 class FrontendController < ApplicationController
-	layout "frontend"
+    layout "frontend"
+    
+    def index
+    end
 end

@@ -52,3 +52,5 @@ $(document).ready(function(){
 
 
 });
+
+console.log("smoootth");

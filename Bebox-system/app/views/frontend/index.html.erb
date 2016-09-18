@@ -1,54 +1,55 @@
+
 <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators ontop">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <div class="first-slide table imag" ></div>
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>BeBox</h1>
-          <p>BEBOX est une solution innovante pour charger les smartphones dans les endroits publiques en toute securité et sans être obligé d'avoir un chargeur avec soi.</p>
-          <p><a class="btn btn-lg btn-primary" href="#steps" role="button">En savoir plus</a></p>
-          <i class="fa fa-angle-down fa-5x"></i>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-        <div class="second-slide bar imag"></div>
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Des casiers a clés pour recharger votre mobile</h1>
-          <p>Vous etes dans un café, hotel, bar, restaurant ou salle d'attente et vous n'avez plus de charge?<br>Aucun problem, Demander au responsable peut etre qu'ils ont une BeBox.</p>
-          <p><a class="btn btn-lg btn-primary" href="#steps" role="button">En savoir plus</a></p>
-          <i class="fa fa-angle-down fa-5x"></i>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class="third-slide cube imag"></div>
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Vous n'avez pas encore de BeBox?</h1>
-          <p><a class="btn btn-lg btn-primary" href="#commander" role="button">Commander ici</a></p>
-          <i class="fa fa-angle-down fa-5x"></i>
-        </div>
-      </div>
+<!-- Indicators -->
+<ol class="carousel-indicators ontop">
+<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel" data-slide-to="1"></li>
+<li data-target="#myCarousel" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner" role="listbox">
+<div class="item active">
+  <div class="first-slide table imag" ></div>
+  <div class="container">
+    <div class="carousel-caption">
+      <h1>BeBox</h1>
+      <p>BEBOX est une solution innovante pour charger les smartphones dans les endroits publiques en toute securité et sans être obligé d'avoir un chargeur avec soi.</p>
+      <p><a class="btn btn-lg btn-primary" href="#steps" role="button">En savoir plus</a></p>
+      <i class="fa fa-angle-down fa-5x"></i>
     </div>
   </div>
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+</div>
+<div class="item">
+    <div class="second-slide bar imag"></div>
+  <div class="container">
+    <div class="carousel-caption">
+      <h1>Des casiers a clés pour recharger votre mobile</h1>
+      <p>Vous etes dans un café, hotel, bar, restaurant ou salle d'attente et vous n'avez plus de charge?<br>Aucun problem, Demander au responsable peut etre qu'ils ont une BeBox.</p>
+      <p><a class="btn btn-lg btn-primary" href="#steps" role="button">En savoir plus</a></p>
+      <i class="fa fa-angle-down fa-5x"></i>
+    </div>
+  </div>
+</div>
+<div class="item">
+  <div class="third-slide cube imag"></div>
+  <div class="container">
+    <div class="carousel-caption">
+      <h1>Vous n'avez pas encore de BeBox?</h1>
+      <p><a class="btn btn-lg btn-primary" href="#commander" role="button">Commander ici</a></p>
+      <i class="fa fa-angle-down fa-5x"></i>
+    </div>
+  </div>
+</div>
+</div>
+<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
 </div><!-- /.carousel -->
 
 
@@ -58,146 +59,146 @@
 
 <div class="container marketing" id="steps">
 
-  <!-- Three columns of text below the carousel -->
-  <div class="row">
+<!-- Three columns of text below the carousel -->
+<div class="row">
+<div class="col-lg-4">
+  <img class="img-circle" src="<%= image_path "branchez.png" %>" alt="Generic placeholder image" width="140" height="140">
+  <h2>BRANCHER</h2>
+  <p>Batterie faible ?! Aucun problem s'il y a une BeBox dans les environs. Placer votre telephone dans un casier vide du boitier BeBox, puis brancher le.</p>
+</div><!-- /.col-lg-4 -->
+<div class="col-lg-4">
+  <img class="img-circle" src="<%= image_path "fermer.png" %>" alt="Generic placeholder image" width="140" height="140">
+  <h2>VEROUILLER</h2>
+  <p>Les petits casier Bebox sont équipé de serrures sécurisées. Verouiller a clef, Pendant que votre telephone recharge. </p>
+</div><!-- /.col-lg-4 -->
+<div class="col-lg-4">
+  <img class="img-circle" src="<%= image_path "securite.png" %>" alt="Generic placeholder image" width="140" height="140">
+  <h2>CHARGER EN TOUTE SECURITE</h2>
+  <p>Emmener les clefs avec vous et ayer l'esprit tranquille en savourant votre cafe ou repas pendant que votre telephone recharge.</p>
+<!--    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+</div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+
+
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette" id="commander">
+<div class="col-md-7 col-md-push-5">
+  <h2 class="featurette-heading">BeElegant. <span class="text-muted">Le boitier Design de BeBox.</span></h2>
+  <p class="lead">Un boitier haut de gamme, avec 3 casiers a clefs pour la recharge de 3 téléphones en meme temps. il existe en deux couleurs noir et blanc. BeElegant est equipé de plusieurs types de chargeurs et d'un systeme LED a lumiere changeante avec télécommande.</p>
+  <p><a class="btn btn-default" href="#" role="button">Commander &raquo;</a></p>
+</div>
+<div class="col-md-5 col-md-pull-7">
+  <img class="featurette-image img-responsive center-block" src="<%= image_path "rsz_be-elegant.jpg" %>" alt="Generic placeholder image">
+</div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+<div class="col-md-7">
+  <h2 class="featurette-heading">BeCube. <span class="text-muted">Le standard.</span></h2>
+  <p class="lead">Un boitier avec 4 casiers a clefs pour la recharge de 4 téléphones en meme temps. BeCube est equipé de plusieurs types de chargeurs et d'un éclairage LED a lumiere fixe.</p>
+  <p><a class="btn btn-default" href="#" role="button">Commander &raquo;</a></p>
+</div>
+<div class="col-md-5">
+  <img class="featurette-image img-responsive center-block" src="<%= image_path "rsz_becube.jpg" %>" alt="Generic placeholder image">
+</div>
+</div>
+
+
+
+</div>
+
+<div class="row dark-section" id="referances">
+<div class="container marketing" style="z-index:1000000;">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center pushdown">
+            <h1>CE QUE PENSENT NOS CLIENTS DE BEBOX!</h1>
+        </div>
+    </div>
     <div class="col-lg-4">
-      <img class="img-circle" src="<%= image_path "branchez.png" %>" alt="Generic placeholder image" width="140" height="140">
-      <h2>BRANCHER</h2>
-      <p>Batterie faible ?! Aucun problem s'il y a une BeBox dans les environs. Placer votre telephone dans un casier vide du boitier BeBox, puis brancher le.</p>
+      <img class="img-circle  border" src="<%= image_path "jobi.png" %>" alt="Generic placeholder image" width="140" height="140">
+      <h2>JOBI</h2>
+      <p>"Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna."</p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="img-circle" src="<%= image_path "fermer.png" %>" alt="Generic placeholder image" width="140" height="140">
-      <h2>VEROUILLER</h2>
-      <p>Les petits casier Bebox sont équipé de serrures sécurisées. Verouiller a clef, Pendant que votre telephone recharge. </p>
+      <img class="img-circle border" src="<%= image_path "linstant.jpg" %>" alt="Generic placeholder image" width="140" height="140">
+      <h2>L'instant Café</h2>
+      <p>"Nos clients adorent l'idée et sont ravis de ce service innovant. D'ailleurs, ils préferent tous maintenant venir boire leur café chez nous au lieu d'aller chez les voisins, pour beneficier entre autre des chargeurs BeBox."</p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="img-circle" src="<%= image_path "securite.png" %>" alt="Generic placeholder image" width="140" height="140">
-      <h2>CHARGER EN TOUTE SECURITE</h2>
-      <p>Emmener les clefs avec vous et ayer l'esprit tranquille en savourant votre cafe ou repas pendant que votre telephone recharge.</p>
+      <img class="img-circle  border" src="<%= image_path "arco.jpg" %>" alt="Generic placeholder image" width="140" height="140">
+      <h2>Arcobaleno</h2>
+      <p>"Avant sans BeBox, ce n'était pas pratique du tout il fallait acheter plusieurs types de chargeurs et on avait enfin sur le bar plusieurs téléphones et plusieurs câbles qu'il fallait surveiller. Le personnel était vraiment gêne par cette responsabilité. Maintenant avec BeBox le problème est résolu nos clients peuvent recharger en toute sécurité dans les casiers Bebox et notre personnel est allège de la responsabilité."</p>
   <!--    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
     </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
-
-
-  <!-- START THE FEATURETTES -->
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette" id="commander">
-    <div class="col-md-7 col-md-push-5">
-      <h2 class="featurette-heading">BeElegant. <span class="text-muted">Le boitier Design de BeBox.</span></h2>
-      <p class="lead">Un boitier haut de gamme, avec 3 casiers a clefs pour la recharge de 3 téléphones en meme temps. il existe en deux couleurs noir et blanc. BeElegant est equipé de plusieurs types de chargeurs et d'un systeme LED a lumiere changeante avec télécommande.</p>
-      <p><a class="btn btn-default" href="#" role="button">Commander &raquo;</a></p>
-    </div>
-    <div class="col-md-5 col-md-pull-7">
-      <img class="featurette-image img-responsive center-block" src="<%= image_path "rsz_be-elegant.jpg" %>" alt="Generic placeholder image">
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">BeCube. <span class="text-muted">Le standard.</span></h2>
-      <p class="lead">Un boitier avec 4 casiers a clefs pour la recharge de 4 téléphones en meme temps. BeCube est equipé de plusieurs types de chargeurs et d'un éclairage LED a lumiere fixe.</p>
-      <p><a class="btn btn-default" href="#" role="button">Commander &raquo;</a></p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="<%= image_path "rsz_becube.jpg" %>" alt="Generic placeholder image">
-    </div>
-  </div>
-
-
-    
 </div>
-    
-<div class="row dark-section" id="referances">
-    <div class="container marketing" style="z-index:1000000;">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center pushdown">
-                <h1>CE QUE PENSENT NOS CLIENTS DE BEBOX!</h1>
-            </div>
-        </div>
-        <div class="col-lg-4">
-          <img class="img-circle  border" src="<%= image_path "jobi.png" %>" alt="Generic placeholder image" width="140" height="140">
-          <h2>JOBI</h2>
-          <p>"Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna."</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle border" src="<%= image_path "linstant.jpg" %>" alt="Generic placeholder image" width="140" height="140">
-          <h2>L'instant Café</h2>
-          <p>"Nos clients adorent l'idée et sont ravis de ce service innovant. D'ailleurs, ils préferent tous maintenant venir boire leur café chez nous au lieu d'aller chez les voisins, pour beneficier entre autre des chargeurs BeBox."</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle  border" src="<%= image_path "arco.jpg" %>" alt="Generic placeholder image" width="140" height="140">
-          <h2>Arcobaleno</h2>
-          <p>"Avant sans BeBox, ce n'était pas pratique du tout il fallait acheter plusieurs types de chargeurs et on avait enfin sur le bar plusieurs téléphones et plusieurs câbles qu'il fallait surveiller. Le personnel était vraiment gêne par cette responsabilité. Maintenant avec BeBox le problème est résolu nos clients peuvent recharger en toute sécurité dans les casiers Bebox et notre personnel est allège de la responsabilité."</p>
-      <!--    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-        </div><!-- /.col-lg-4 -->
-    </div>
-  </div><!-- /.row -->      
+</div><!-- /.row -->      
 
 
 
 
-  <!-- /END THE FEATURETTES -->
+<!-- /END THE FEATURETTES -->
 
 <div class="container marketing">
-    
-  <div class="row featurette " id="contact">
-    <div class="col-md-12 text-center">
-      <h2 class="featurette-heading ">Contacter Nous <span class="text-muted">!</span></h2>
-        <a href="https://www.facebook.com/MyBeBox" target=_blank> <i class="fa fa-facebook-official fa-3x facebook"></i></a>
-      <p >BeBox <br>(+216)  24 767 992 <br>info@mybebox.tn</p>
-    </div>
-      
-  <form id="contactForm" class="form-horizontal " role="form" >
-       <div class='row'>
 
-           <div class="col-lg-6 col-lg-offset-3 formular">
-               <!--<form class="form-horizontal" role="form">-->
-               <div class="form-group">
-                   <label for="civilite" class="col-sm-3 control-label">Prenom:</label>
-                   <div class="col-sm-7">
-                       <input type="text" class="form-control" name="prenom" id="prenom">
-                   </div>
+<div class="row featurette " id="contact">
+<div class="col-md-12 text-center">
+  <h2 class="featurette-heading ">Contacter Nous <span class="text-muted">!</span></h2>
+    <a href="https://www.facebook.com/MyBeBox" target=_blank> <i class="fa fa-facebook-official fa-3x facebook"></i></a>
+  <p >BeBox <br>(+216)  24 767 992 <br>info@mybebox.tn</p>
+</div>
+
+<form id="contactForm" class="form-horizontal " role="form" >
+   <div class='row'>
+
+       <div class="col-lg-6 col-lg-offset-3 formular">
+           <!--<form class="form-horizontal" role="form">-->
+           <div class="form-group">
+               <label for="civilite" class="col-sm-3 control-label">Prenom:</label>
+               <div class="col-sm-7">
+                   <input type="text" class="form-control" name="prenom" id="prenom">
                </div>
-               <div class="form-group">
-                   <label for="nom" class="col-sm-3 control-label">Nom:</label>
-                   <div class="col-sm-7">
-                       <input type="text" class="form-control" name="name" id="name">
-                   </div>
-               </div>
-               <div class="form-group" >
-                   <label for="prenom" class="col-sm-3 control-label">Societe :</label>
-                   <div class="col-sm-7">
-                       <input type="text" class="form-control" name="firma" id="firma">
-                   </div>
-               </div>
-               <div class="form-group">
-                   <label for="mail" class="col-sm-3 control-label">Email :</label>
-                   <div class="col-sm-7">
-                       <input type="email" class="form-control" name="email" id="email">
-                   </div>
-               </div>
-               <div class="form-group">
-                   <label for="tel" class="col-sm-3 control-label">Telephone :</label>
-                   <div class="col-sm-7">
-                       <input type="text" class="form-control" name="tel" id="tel">
-                   </div>
-               </div>
-               <div class="form-group">
-                   <label for="mobile" class="col-sm-3 control-label">Message:</label>
-                   <div class="col-sm-7">
-                       <textarea type="text" class="form-control" rows="5" name="message" id="message"></textarea>
-                   </div>
-               </div>
-               <button type="submit" id="form-submit" class="btn btn-default btn-form col-sm-7 col-sm-offset-3">Envoyer</button>
-               <div class="form-group">
-                    <div id="msgSubmit" class="col-sm-12  text-center hidden "><p>Message envoye!</p></div>
-                </div>
-               <!--                                    </form>-->
            </div>
+           <div class="form-group">
+               <label for="nom" class="col-sm-3 control-label">Nom:</label>
+               <div class="col-sm-7">
+                   <input type="text" class="form-control" name="name" id="name">
+               </div>
+           </div>
+           <div class="form-group" >
+               <label for="prenom" class="col-sm-3 control-label">Societe :</label>
+               <div class="col-sm-7">
+                   <input type="text" class="form-control" name="firma" id="firma">
+               </div>
+           </div>
+           <div class="form-group">
+               <label for="mail" class="col-sm-3 control-label">Email :</label>
+               <div class="col-sm-7">
+                   <input type="email" class="form-control" name="email" id="email">
+               </div>
+           </div>
+           <div class="form-group">
+               <label for="tel" class="col-sm-3 control-label">Telephone :</label>
+               <div class="col-sm-7">
+                   <input type="text" class="form-control" name="tel" id="tel">
+               </div>
+           </div>
+           <div class="form-group">
+               <label for="mobile" class="col-sm-3 control-label">Message:</label>
+               <div class="col-sm-7">
+                   <textarea type="text" class="form-control" rows="5" name="message" id="message"></textarea>
+               </div>
+           </div>
+           <button type="submit" id="form-submit" class="btn btn-default btn-form col-sm-7 col-sm-offset-3">Envoyer</button>
+           <div class="form-group">
+                <div id="msgSubmit" class="col-sm-12  text-center hidden "><p>Message envoye!</p></div>
+            </div>
+           <!--                                    </form>-->
        </div>
-   </form>
-  </div>        
+   </div>
+</form>
+</div>        
