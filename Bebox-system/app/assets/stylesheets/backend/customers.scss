@@ -1,0 +1,30 @@
+// Place all the styles related to the backend/customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.panel{
+
+	.panel-heading {
+
+		.trash{
+			float:right;
+			color:#d9534f;
+
+		}
+
+		.pancel{
+			float:right;
+			margin-right: 5%;
+			color:#d9534f;
+
+		}
+
+	}
+
+	.panel-body{
+	
+		.chart{
+		    margin-bottom: 50px;
+		}
+	}
+
+}

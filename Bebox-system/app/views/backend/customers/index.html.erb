@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Customer<span class="badge"><%= @customer.count %></span></h3>
+    <% link_to icon("plus-circle"), new_backend_customer_path, class:"btn" %>
+  </div>
+  <div class="panel-body">
+    
+  </div>
+
+<div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+          
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Company</th>
+            <th>Email</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% @customer.each do |customer| %>
+            <tr>
+              <td><%= link_to customer.name, backend_customer_path(customer) %></td>
+              <td><%= customer.phone %></td>
+              <td><%= customer.email %></td>
+              <td><%= customer.company %></td>
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
