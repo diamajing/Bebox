@@ -1,0 +1,243 @@
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+    background-color: rgba(255,255,255,1);
+}
+
+
+.bar{
+     background: linear-gradient(
+		  to top,
+		  rgba(0,0,0, 1),
+		  rgba(0,0,0, 0)
+		),url("<%= image_path "rsz_beelegant-bar2.jpg" %>");
+    
+}
+
+
+.table{
+   background: linear-gradient(
+		  to top,
+		  rgba(0,0,0, 1),
+		  rgba(0,0,0, 0)
+		),url("<%= image_path "rsz_beelegant-table.jpg" %>"); 
+}
+
+
+.cube{
+     background: linear-gradient(
+		  to top,
+		  rgba(0,0,0, 0.8),
+		  rgba(0,0,0, 0)
+		),url("<%= image_path "rsz_becube-bar.jpg" %>");
+} 
+
+.dark-section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    background: linear-gradient(
+		  to top,
+		  rgba(0,0,0, 1),
+		  rgba(0,0,0, 0)
+		),url("<%= image_path "rsz_blur.jpg" %>");
+    color: white;
+    background-position: center;
+    
+}
+.ontop{
+    top: 85px;
+    z-index: 0;
+}
+
+.border{
+    border-width: 4px;
+    border-style: solid;
+}
+
+.pushdown{
+    padding-bottom: 70px;
+}
+
+.facebook{
+    padding: 20px;
+}
+
+.facebook:hover{
+    padding: 20px;
+    color: #2e6da4;
+}
+
+
+.formular{
+    margin-top: 50px;
+    margin-bottom: 120px;
+}
+
+#msgSubmit{
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+#steps{
+    padding-top: 30px;
+}
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+.navbar{
+    background-color: rgba(0,0,0,0.6);
+}
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 100vh;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10000;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 100vh;
+  background-color: none;
+}
+.carousel-inner > .item > .imag {
+  position: absolute;
+  left: auto;
+  top: 0;
+  min-width: 100%;
+  height: 100%;
+  background-position:bottom;
+  background-size: cover;
+    z-index: 10;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+
+.marketing p {
+  font-size: 20px;;
+}
+
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+    
+  .carousel-caption h1 {
+    margin-bottom: 8px;
+    font-size: 35px;
+    line-height: 1.4;
+  }
+    
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+    
+ .carousel-caption p {
+     margin-bottom: 20px;
+     font-size: 28px;
+     line-height: 1.4;
+  }
+    
+  .carousel-caption h1 {
+    margin-bottom: 10px;
+    font-size: 45px;
+    line-height: 1.4;
+  }
+}
