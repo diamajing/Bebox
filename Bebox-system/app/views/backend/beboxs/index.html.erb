@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Bebox<span class="badge"><%= @bebox.count %></span></h3>
+    <% link_to icon("plus-circle"), new_backend_bebox_path, class:"btn" %>
+  </div>
+  <div class="panel-body">
+    
+  </div>
+
+<div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+         
+            <th>Reference</th>
+            <th>Location</th>
+            <th>Category</th>
+            <th>Customer_id</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% @bebox.each do |bebox| %>
+            <tr>
+              <td><%= link_to bebox.reference, backend_bebox_path(bebox) %></td>
+              <td><%= bebox.location %></td>
+              <td><%= bebox.category %></td>
+              <td><%= bebox.customer_id %></td>
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

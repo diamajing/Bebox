@@ -1,0 +1,39 @@
+<% content_for :pagename, "Bebox" %>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Bebox <span class="badge"></span></h3>
+    <% link_to icon("plus-circle"), new_backend_bebox_path, class:"btn" %>
+  </div>
+  <div class="panel-body">
+    <div class="row container">
+            <%=form_for [:backend,@bebox] , :html => {class: 'form-horizontal col-xs-12 col-sm-2 col-sm-offset-5' } do |f| %>
+            
+                <div class="form-group">
+                    <%= f.label :reference, class: "" %>
+                    <%= f.text_field :reference, placeholder:"Reference" ,class: "form-control transparent",rows: 3, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :location, class: "" %>
+                    <%= f.text_field :location, placeholder:"Location", class: "form-control ", rows: 3, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :category, class: "" %>
+                    <%= f.text_field :category, placeholder:"Category", class: "form-control transparent", rows: 2, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :customer_id, class: "" %>
+                    <%= f.text_field :customer_id, placeholder:"Customer_id", class: "form-control transparent",rows: 8, required: true %>
+                </div>
+                
+                    <%= f.submit "Modifier", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+            <% end %>
+        </div>
+  </div>
+</div>
+
+
+
+<script src="../../assets/javascripts/backend/Chart.js"></script>
