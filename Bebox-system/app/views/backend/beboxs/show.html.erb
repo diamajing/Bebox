@@ -1,3 +1,10 @@
+<% content_for :pagename, "Bebox show" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Beboxes", backend_beboxs_path%>
+  <%= bc_link @bebox.reference %>
+<% end %>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Profile <%= @bebox.reference %><span class="badge"></span></h3>

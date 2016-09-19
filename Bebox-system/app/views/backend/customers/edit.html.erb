@@ -1,5 +1,9 @@
 <% content_for :pagename, "Customer" %>
-
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Customers", admin_path %>
+  <%= bc_link "edit" %>
+<% end %>
 
 
 <div class="panel panel-default">
@@ -9,7 +13,7 @@
   </div>
   <div class="panel-body">
     <div class="row container">
-            <%=form_for [:backend,@customer] , :html => {class: 'form-horizontal col-xs-12 col-sm-2 col-sm-offset-5' } do |f| %>
+            <%=form_for [:backend,@customer] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4' } do |f| %>
                 <div class="form-group">
                     <%= f.label :name, class: "" %>
                     <%= f.text_field :name, placeholder:"Name" ,class: "form-control transparent",rows: 3, required: true %>

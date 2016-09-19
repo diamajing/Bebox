@@ -1,4 +1,11 @@
-<% content_for :pagename, "Bebox" %>
+<% content_for :pagename, "Beboxes" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Beboxes", backend_beboxs_path%>
+  <%= bc_link @bebox.reference %>
+  <%= bc_link "edit" %>
+<% end %>
+
 
 
 
@@ -9,7 +16,7 @@
   </div>
   <div class="panel-body">
     <div class="row container">
-            <%=form_for [:backend,@bebox] , :html => {class: 'form-horizontal col-xs-12 col-sm-2 col-sm-offset-5' } do |f| %>
+            <%=form_for [:backend,@bebox] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4' } do |f| %>
             
                 <div class="form-group">
                     <%= f.label :reference, class: "" %>
@@ -25,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <%= f.label :customer_id, class: "" %>
-                    <%= f.text_field :customer_id, placeholder:"Customer_id", class: "form-control transparent",rows: 8, required: true %>
+                    <%= f.collection_select(:customer_id, Customer.all,:id, :name ,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
                 </div>
                 
                     <%= f.submit "Modifier", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>

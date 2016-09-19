@@ -1,3 +1,11 @@
+<% content_for :pagename, "Customer Show" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Customers", admin_path %>
+  <%= bc_link @customer.name %>
+<% end %>
+
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Profile <%= @customer.name %><span class="badge"></span></h3>
