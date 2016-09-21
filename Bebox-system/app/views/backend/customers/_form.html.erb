@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Customer <span class="badge"></span></h3>
+    <% link_to icon("plus-circle"), new_backend_customer_path, class:"btn" %>
+  </div>
+  <div class="panel-body">
+    <div class="row container">
+            <%=form_for [:backend,@customer] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4' } do |f| %>
+                <div class="form-group">
+                    <%= f.label :name, class: "" %>
+                    <%= f.text_field :name, placeholder:"Name" ,class: "form-control transparent",rows: 3, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :phone, class: "" %>
+                    <%= f.text_field :phone, placeholder:"Surname", class: "form-control ", rows: 3, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :company, class: "" %>
+                    <%= f.text_field :company, placeholder:"Town", class: "form-control transparent", rows: 2, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :email, class: "" %>
+                    <%= f.text_field :email, placeholder:"Telephone", class: "form-control transparent",rows: 8, required: true %>
+                </div>
+                
+                    <%= f.submit "Modifier", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+            <% end %>
+        </div>
+  </div>
+</div>
+
+
+
+<script src="../../assets/javascripts/backend/Chart.js"></script>

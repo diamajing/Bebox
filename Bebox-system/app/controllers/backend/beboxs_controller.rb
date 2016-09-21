@@ -2,7 +2,10 @@ class Backend::BeboxsController < BackendController
   def index
   	@bebox = Bebox.all
   end
-
+  def new
+  @bebox = Bebox.new 
+   end 
+  
   def show
   	@bebox = Bebox.find(params[:id])
   end
