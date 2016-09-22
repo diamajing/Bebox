@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <div class="row container">
-            <%=form_for [:backend,(bebox)] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4' } do |f| %>
+            <%= form_for(@bebox, :url => backend_beboxs_path, :html => { :class => "form-horizontal col-xs-12 col-sm-4 col-sm-offset-4"}) do |f| %>
             
                 <div class="form-group">
                     <%= f.label :reference, class: "" %>
