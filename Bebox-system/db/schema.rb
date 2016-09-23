@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918211352) do
+ActiveRecord::Schema.define(version: 20160923191543) do
 
   create_table "beboxes", force: :cascade do |t|
     t.string   "reference"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20160918211352) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "maintenances", force: :cascade do |t|
+    t.integer  "category"
+    t.integer  "bebox_id"
+    t.string   "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bebox_id"], name: "index_maintenances_on_bebox_id"
   end
 
 end

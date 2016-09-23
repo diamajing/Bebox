@@ -1,9 +1,24 @@
 class Backend::BeboxsController < BackendController
-  
+       
     def index
     	@bebox = Bebox.all
     end
-  
+     
+    def create
+     @bebox = Bebox.new(bebox_params)
+     if @bebox.save
+        redirect_to  backend_beboxs_path ,notice: "bebox Ajouter"
+     else
+        
+      redirect_to new_backend_bebox
+        end 
+    end
+
+    
+
+
+
+
     def new
         @bebox = Bebox.new 
     end 
