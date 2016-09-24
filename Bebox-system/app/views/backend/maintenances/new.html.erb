@@ -1,0 +1,7 @@
+<% content_for :pagename, "Maintenances New" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Maintenances", admin_path %>
+  <%= bc_link "new" %>
+<% end %>
+<%= render 'form' , maintenances: @maintenances%>

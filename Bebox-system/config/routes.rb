@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   
   
+  namespace :backend do
+    resources :maintenances
+  end
+
+  
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     namespace :backend do
-    resources :beboxs 
+    	resources :beboxs 
     end 
     
     namespace :backend do

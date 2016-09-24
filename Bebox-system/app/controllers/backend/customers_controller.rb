@@ -2,6 +2,20 @@ class Backend::CustomersController < BackendController
 	def index
 		@customer = Customer.all
 	end
+  def new
+        @customer = Customer.new 
+  end
+
+  def create
+     @customer = Customer.new(customer_params)
+     if @customer.save
+        redirect_to  backend_customers_path ,notice: "bebox Ajouter"
+     else
+        
+      redirect_to new_backend_customer
+        end 
+    end 
+  
 	def show
 		@customer = Customer.find(params[:id])
 	end

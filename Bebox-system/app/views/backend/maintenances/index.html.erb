@@ -1,0 +1,48 @@
+<% content_for :pagename, "Maintenances" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Maintenances" %>
+<% end %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Maintenances<span class="badge"><%= @maintenances.count %></span></h3>
+    <% link_to icon("plus-circle"), new_backend_maintenance_path, class:"btn" %>
+    <%= link_to new_backend_maintenance_path do %>
+        
+        <i class="fa fa-plus-circle fa-2x trash " aria-hidden="true"></i>
+      <% end -%>
+  </div>
+  <div class="panel-body">
+    
+  </div>
+
+<div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+          
+            <th>category</th>
+            <th>bebox_id</th>
+            <th>note</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% @maintenances.each do |maintenances| %>
+            <tr>
+              <td><%= link_to maintenances.category, backend_maintenance_path(maintenances) %></td>
+              <td><%= maintenances.bebox_id %></td>
+              <td><%= maintenances.note %></td>
+              
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
