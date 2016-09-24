@@ -1,0 +1,28 @@
+<% content_for :pagename, "Parts Show" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Parts", admin_path %>
+  <%= bc_link @part.name %>
+  
+<% end %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Profile <span class="badge"></span></h3>
+      <%= link_to  backend_part_path(@part) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+        <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
+      <% end -%>
+      <%= link_to  edit_backend_part_path(@part) do %>
+      <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
+      <%end%>
+  </div>
+  
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Name:</dt>
+      <dd><%= @part.name %></dd>
+      
+    </dl>
+  </div>
+</div>

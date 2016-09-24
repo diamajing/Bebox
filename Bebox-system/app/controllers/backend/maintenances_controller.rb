@@ -6,11 +6,11 @@ class Backend::MaintenancesController < BackendController
   	@maintenances = Maintenance.all
   end
   def create
-     @maintenances = Maintenance.new(maintenances_params)
+     
+        @maintenances = Maintenance.new(maintenances_params)
      if @maintenances.save
         redirect_to  backend_maintenances_path ,notice: "maintenances Ajouter"
      else
-        
       redirect_to new_backend_customer
         end 
     end 

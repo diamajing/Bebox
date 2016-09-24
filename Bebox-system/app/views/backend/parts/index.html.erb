@@ -1,0 +1,48 @@
+<% content_for :pagename, "Parts" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Parts" %>
+<% end %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Parts<span class="badge"><%= @part.count %></span></h3>
+    <% link_to icon("plus-circle"), new_backend_part_path, class:"btn" %>
+    <%= link_to new_backend_part_path do %>
+        
+        <i class="fa fa-plus-circle fa-2x trash " aria-hidden="true"></i>
+      <% end -%>
+  </div>
+  <div class="panel-body">
+    
+  </div>
+  
+
+<div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+          
+            <th>Name</th>
+            
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% @part.each do |parts| %>
+            <tr>
+              <td><%= link_to parts.name, backend_part_path(parts) %></td>
+              
+              
+              
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

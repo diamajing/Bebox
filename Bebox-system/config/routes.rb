@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   
   
+ 
+
+  
+  
+
+  namespace :backend do
+    resources :parts
+  end
+
+
   namespace :backend do
     resources :maintenances
   end
