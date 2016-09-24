@@ -21,3 +21,4 @@
 //= require_tree ./backend/sidebar
 //= require_tree ./backend
 //= require_self
+console.log("jhdkjdf");
