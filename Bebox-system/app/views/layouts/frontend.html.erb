@@ -27,9 +27,9 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#referances">Referances</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li class="active" class="js-scrollTo"><a href="#">Home</a></li>
+        <li><a href="#referances" class="js-scrollTo">Referances</a></li>
+        <li><a href="#contact" class="js-scrollTo">Contact</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -72,6 +72,17 @@
   ga('create', 'UA-74117432-1', 'auto');
   ga('send', 'pageview');
 
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+      var page = $(this).attr('href'); // Page cible
+      var speed = 750; // Durée de l'animation (en ms)
+      $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+      return false;
+    });
+  });
 </script>
 
   </body>
