@@ -4,35 +4,23 @@
   <%= bc_link "Maintenances" %>
 <% end %>
 
-
+<%= link_to ' liste des pieces', backend_parts_path ,class: "but btn btn-danger fa fa-list col-xs-offset-6 col-md-offset-8" %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Maintenances<span class="badge"><%= @maintenances.count %></span></h3>
+    <h3 class="panel-title">Maintenances <span class="badge"><%= @maintenances.count %></span></h3>
     <% link_to icon("plus-circle"), new_backend_maintenance_path, class:"btn" %>
-    <%= link_to new_backend_maintenance_path do %>
-        
+    <%= link_to new_backend_maintenance_path do %>      
         <i class="fa fa-plus-circle fa-2x trash " aria-hidden="true"></i>
-      <% end -%>
-  </div>
-  <div class="panel-body">
-    
-  </div>
-   <%= link_to  backend_parts_path do %>
-  <button class "btn btn-danger" class="but">liste des pieces</button>    
-      <%end%>
-  
-
+    <% end -%>
+</div>
 <div class="panel-body">
     <div class="table-responsive">
       <table class="table table-condensed table-bordered table-striped table-hover">
         <thead>
-          <tr>
-          
+          <tr>         
             <th>category</th>
             <th>bebox_id</th>
-            <th>note</th>
-            
-            
+            <th>note</th>   
           </tr>
         </thead>
         <tbody>
@@ -40,9 +28,7 @@
             <tr>
               <td><%= link_to maintenances.category, backend_maintenance_path(maintenances) %></td>
               <td><%= maintenances.bebox_id %></td>
-              <td><%= maintenances.note %></td>
-              
-              
+              <td><%= maintenances.note %></td>      
             </tr>
           <% end %>
         </tbody>

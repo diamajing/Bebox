@@ -1,13 +1,14 @@
-<% content_for :pagename, "Parts" %>
+<% content_for :pagename, "Pieces" %>
 <% content_for :breadcrumb do %>
   <%= bc_link "Home", admin_path %>
+  <%= bc_link "Maintenances", backend_maintenances_path %>
   <%= bc_link "Parts" %>
 <% end %>
 
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Parts<span class="badge"><%= @part.count %></span></h3>
+    <h3 class="panel-title">Pieces <span class="badge"><%= @part.count %></span></h3>
     <% link_to icon("plus-circle"), new_backend_part_path, class:"btn" %>
     <%= link_to new_backend_part_path do %>
         

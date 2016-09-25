@@ -70,25 +70,23 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="row" style="margin: 0">
-                  <div class="container">
+                  <div class="container" style="margin-bottom:20px;">
+                    <div class="row" style="margin: 0">
                     <div class="col-md-12">
                       <% flash.each do |name, msg| %>
                         <% if msg.is_a?(String) %>
-                          <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>">
+                          <div class="alert alert-<%= name == "notice" ? "success" : "danger" %>" style="margin-top:20px;">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             <%= content_tag :div, msg, id:"flash_#{name}" %>
                           </div>
                         <% end %>
                       <% end %>
-	
-                     
-
                     </div>
                   </div>
                 </div>
+
                 <%= yield %>
+                
               </section>
             </div>
           </div>

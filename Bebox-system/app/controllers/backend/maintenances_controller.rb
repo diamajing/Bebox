@@ -5,15 +5,20 @@ class Backend::MaintenancesController < BackendController
   def index
   	@maintenances = Maintenance.all
   end
+
   def create
-     
-        @maintenances = Maintenance.new(maintenances_params)
+      @maintenances = Maintenance.new(maintenances_params)
      if @maintenances.save
-        redirect_to  backend_maintenances_path ,notice: "maintenances Ajouter"
+        if @maintenances.category == 0
+          redirect_to backend_maintenances_note_path(@maintenances)
+        else
+          redirect_to  backend_maintenances_path ,notice: "maintenances Ajouter"
+      end
      else
-      redirect_to new_backend_customer
-        end 
-    end 
+        redirect_to new_backend_customer
+      end 
+  end 
+
   def edit
   	@maintenances = Maintenance.find(params[:id])
   end
@@ -26,8 +31,7 @@ class Backend::MaintenancesController < BackendController
     @maintenances = Maintenance.find(params[:id])
     if @maintenances.destroy
       redirect_to backend_maintenances_path ,notice: "Maintenances supprime"
-    
-        end
+    end
   end 
 
   def update
@@ -36,7 +40,12 @@ class Backend::MaintenancesController < BackendController
       redirect_to backend_maintenances_path ,notice: "Maintenances mise a jour"
       end 
      end  
-          
+
+  def note
+  end
+
+  private   
+
   def maintenances_params
   		params.require(:maintenance).permit(:category, :bebox_id , :note)
   	end

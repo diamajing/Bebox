@@ -13,8 +13,7 @@
 </div>
 <ul>
     <li><%= link_to "Tableau de bord", admin_path, class: "fa fa-pie-chart #{menu_active("pages")}" %></li>
-    <li><%= link_to "Customers",  backend_customers_path, class: "fa fa-pie-chart #{menu_active("pages")}" %></li>
-    <li><%= link_to "Beboxs",  backend_beboxs_path, class: "fa fa-pie-chart #{menu_active("pages")}" %></li>
-    <li><%= link_to "Maintenance",  backend_maintenances_path, class: "fa fa-pie-chart #{menu_active("pages")}" %></li>
-    <li><%= link_to "Liste des piéces",  backend_parts_path, class: "fa fa-pie-chart #{menu_active("pages")}" %></li>
+    <li><%= link_to "Clients",  backend_customers_path, class: "fa fa-users #{menu_active("customers")}" %></li>
+    <li><%= link_to "Beboxes",  backend_beboxs_path, class: "fa fa-th-large #{menu_active("beboxs")}" %></li>
+    <li><%= link_to "Maintenances",  backend_maintenances_path, class: "fa fa-cog #{menu_active("maintenances")}" %></li>
 </ul>

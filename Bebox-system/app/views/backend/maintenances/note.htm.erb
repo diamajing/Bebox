@@ -1,0 +1,27 @@
+<% content_for :pagename, "ajouter une Notice" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Maintenances", admin_path %>
+  <%= bc_link "new" %>
+  <%= bc_link "Notice" %>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Maintenances <span class="badge"></span></h3>
+    <% link_to icon("plus-circle"), new_backend_maintenance_path, class:"btn" %>
+  </div>
+  <div class="panel-body">
+    <div class="row container">
+            <%=form_for [:backend,@maintenances] , :html => {class: 'form-horizontal col-xs-12 col-sm-6 col-sm-offset-3' } do |f| %>
+                <div class="form-group">
+                    <%= f.label :note, class: "Ajouter une note sur l'appel telephonique" %>
+                    <%= f.text_field :note, placeholder:"Notice", class: "form-control transparent", rows: 2, required: true %>
+                </div>
+                <%= f.submit "Ajouter", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+            <% end %>
+        </div>
+  </div>
+</div>
+
+

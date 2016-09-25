@@ -12,15 +12,15 @@
                 </div>
                 <div class="form-group">
                     <%= f.label :bebox_id, class: "" %>
-                    <%= f.collection_select(:bebox_id, .all,:id, :bebox_id ,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
+                    <%= f.collection_select(:bebox_id, Bebox.all,:id, :reference,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
                 </div>
-                <div class="form-group">
-                    <%= f.label :note, class: "" %>
-                    <%= f.text_field :note, placeholder:"Note", class: "form-control transparent", rows: 2, required: true %>
-                </div>
-                
-                
-                    <%= f.submit "Ajouter", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+                <% if @maintenances.note.present? %>
+                    <div class="form-group">
+                        <%= f.label :note, class: "" %>
+                        <%= f.text_field :note, placeholder:"Note", class: "form-control transparent", rows: 2, required: true %>
+                    </div>
+                <% end %>
+                <%= f.submit "Ajouter", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
             <% end %>
         </div>
   </div>
@@ -28,4 +28,4 @@
 
 
 
-<script src="../../assets/javascripts/backend/Chart.js"></script>
+
