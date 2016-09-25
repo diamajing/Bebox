@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :backend do
     resources :maintenances
-    get "maintenances/note", to: "maintenances#note"
+    get "maintenances/note", to: "maintenances#note", as: "note"
   end
 
   

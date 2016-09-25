@@ -10,10 +10,11 @@ class Backend::MaintenancesController < BackendController
       @maintenances = Maintenance.new(maintenances_params)
      if @maintenances.save
         if @maintenances.category == 0
-          redirect_to backend_maintenances_note_path(@maintenances)
+          puts "categ 0 func"
+          render 'note'
         else
           redirect_to  backend_maintenances_path ,notice: "maintenances Ajouter"
-      end
+       end
      else
         redirect_to new_backend_customer
       end 
@@ -41,7 +42,8 @@ class Backend::MaintenancesController < BackendController
       end 
      end  
 
-  def note
+  def note(maintenance)
+    @maintenances = maintenance
   end
 
   private   
