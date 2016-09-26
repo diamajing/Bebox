@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924144504) do
+ActiveRecord::Schema.define(version: 20160925185356) do
 
   create_table "beboxes", force: :cascade do |t|
     t.string   "reference"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20160924144504) do
     t.index ["customer_id"], name: "index_beboxes_on_customer_id"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "company"
+    t.string   "email"
+    t.string   "Telephone"
+    t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string   "name"
     t.string   "phone"
@@ -29,6 +40,16 @@ ActiveRecord::Schema.define(version: 20160924144504) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "interventions", force: :cascade do |t|
+    t.string   "action"
+    t.integer  "part_id"
+    t.integer  "maintenance_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["maintenance_id"], name: "index_interventions_on_maintenance_id"
+    t.index ["part_id"], name: "index_interventions_on_part_id"
   end
 
   create_table "maintenances", force: :cascade do |t|

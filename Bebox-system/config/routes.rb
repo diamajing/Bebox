@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
   
- 
-
-  
+namespace :frontend do
+  resources :contacs
+end
   
 
   namespace :backend do
