@@ -17,18 +17,20 @@
     <div class="table-responsive">
       <table class="table table-condensed table-bordered table-striped table-hover">
         <thead>
-          <tr>         
-            <th>category</th>
-            <th>bebox_id</th>
+          <tr> 
+            <th>Nr.</th>        
+            <th>Categorie</th>
+            <th>Bebox</th>
             <th>note</th>   
           </tr>
         </thead>
         <tbody>
-          <% @maintenances.each do |maintenances| %>
+          <% @maintenances.each do |maintenance| %>
             <tr>
-              <td><%= link_to maintenances.category, backend_maintenance_path(maintenances) %></td>
-              <td><%= maintenances.bebox_id %></td>
-              <td><%= maintenances.note %></td>      
+            <td><%=link_to maintenance.id, backend_maintenance_path(maintenance)  %></td>
+              <td><%=  maintenance.category %></td>
+              <td><%= maintenance.bebox_id %></td>
+              <td><%= maintenance.note %></td>      
             </tr>
           <% end %>
         </tbody>

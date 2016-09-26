@@ -9,11 +9,11 @@ class Backend::MaintenancesController < BackendController
   def create
       @maintenances = Maintenance.new(maintenances_params)
      if @maintenances.save
-        if @maintenances.category == 0
-          puts "categ 0 func"
+        if @maintenances.category == 'telephone'
           render 'note'
         else
-          redirect_to  backend_maintenances_path ,notice: "maintenances Ajouter"
+          session[:maintenance] = @maintenances.id
+          redirect_to new_backend_intervention_path(@maintenance)
        end
      else
         redirect_to new_backend_customer
@@ -49,6 +49,7 @@ class Backend::MaintenancesController < BackendController
   private   
 
   def maintenances_params
-  		params.require(:maintenance).permit(:category, :bebox_id , :note)
-  	end
+		params.require(:maintenance).permit(:category, :bebox_id , :note)
+	end
+
 end
