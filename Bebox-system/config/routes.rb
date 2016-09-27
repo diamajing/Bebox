@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+<<<<<<< HEAD
   namespace :frontend do 
     resources :contacts
   end
