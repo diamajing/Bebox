@@ -16,7 +16,7 @@ class Backend::MaintenancesController < BackendController
           redirect_to new_backend_intervention_path(@maintenance)
        end
      else
-        redirect_to new_backend_customer
+        redirect_to backend_maintenances_path, alert: "Une erruer s'est produite, la maintenace n'a pas ete ajouter"
       end 
   end 
 

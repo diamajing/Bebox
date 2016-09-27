@@ -23,10 +23,32 @@
       <dt>Location:</dt>
      
       <dd><%= @bebox.location %></dd>
-      <dt>Category:</dt>
+      <dt>Categorie:</dt>
       <dd><%= @bebox.category %></dd>
-      <dt>Customer_id:</dt>
-      <dd><%= @bebox.customer_id %></dd>
+      <dt>Client:</dt>
+      <dd><%= @bebox.customer.name %></dd>
     </dl>
+    <hr class="featurette-devider">
+    <div class="panel-heading">
+        <h3 class="panel-title">Historique des maintenances</h3>
+        <%= link_to 'Ajouter une maintenance', new_backend_maintenance_path(bebox_id: @bebox.id), class: "btn btn-danger" %>
+    </div>
+    <table class="table">
+        <thead>
+            <th>Nr.</th>
+            <th>Categorie</th>
+            <th>Date</th>
+        </thead>
+        <tbody>
+            <% @bebox.maintenances.each do |maintenance| %>
+                <tr>
+                    <td><%= maintenance.id %></td>
+                    <td><%= maintenance.category %></td>
+                    <td><%= maintenance.created_at %></td>
+                </tr>
+            <% end -%>
+        </tbody>
+
+    </table>
   </div>
 </div>

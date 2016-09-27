@@ -1,0 +1,15 @@
+<% content_for :pagename, "Tableau de bord" %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Clients a appeler pour maintenance</span></h3>
+  </div>
+  <div class="panel-body">
+  	<% @maintenances.each do |bebox| %>
+  		<div class="alert alert-warning" role="alert">
+  			Veuillez appeller <%= bebox.customer.name %> pour la maintenance de sa Bebox <%= link_to bebox.reference, backend_bebox_path(bebox) %> au | <%= bebox.location %>  | <%= bebox.customer.phone %>
+  		</div>
+	<% end -%>
+  </div>
+</div>

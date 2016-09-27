@@ -10,10 +10,14 @@
                     <%= f.label :category, class: "" %>
                     <%= f.select(:category, Maintenance.categories.keys.to_a,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
                 </div>
+                <% if params[:bebox_id].present? %>
+                    <%= hidden_field_tag :bebox_id , params[:bebox_id] %>
+                <% else %>
                 <div class="form-group">
                     <%= f.label :bebox_id, class: "" %>
                     <%= f.collection_select(:bebox_id, Bebox.all,:id, :reference,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
                 </div>
+                <% end %>
                 <% if @maintenances.note.present? %>
                     <div class="form-group">
                         <%= f.label :note, class: "" %>
