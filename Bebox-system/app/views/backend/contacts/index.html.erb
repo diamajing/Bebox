@@ -1,0 +1,50 @@
+<% content_for :pagename, "Contacts" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Contacts" %>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Contacts <span class="badge"><%= @contacts.count %></span></h3>
+    <% link_to icon("plus-circle"), new_backend_contact_path, class:"btn" %>
+     <%= link_to new_backend_contact_path do %>
+        
+        <i class="fa fa-plus-circle fa-2x trash " aria-hidden="true"></i>
+      <% end -%>
+  </div>
+  <div class="panel-body">
+    
+  </div>
+  
+
+<div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+          <tr>    
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Message</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% @contacts.each do |contacts| %>
+            <tr>
+              <td><%= link_to contacts.name, backend_contact_path(contacts) %></td>
+              <td><%= contacts.surname %></td>
+              <td><%= contacts.company %></td>
+              <td><%= contacts.email %></td>
+              <td><%= contacts.Telephone %></td>
+              <td><%= contacts.message %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

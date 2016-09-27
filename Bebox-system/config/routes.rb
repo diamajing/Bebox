@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+ 
+
   namespace :frontend do 
     resources :contacts
   end
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
 
 
   namespace :backend do
+    resources :contacts
     resources :interventions
     resources :customers
     resources :beboxs 

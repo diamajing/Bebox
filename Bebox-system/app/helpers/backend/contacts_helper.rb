@@ -1,0 +1,2 @@
+module Backend::ContactsHelper
+end

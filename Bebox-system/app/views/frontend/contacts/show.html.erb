@@ -1,0 +1,54 @@
+<% content_for :pagename, "Contacts show" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Contacts", frontend_contacts_path%>
+  <%= bc_link @bebox.reference %>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Profile <%= @bebox.reference %><span class="badge"></span></h3>
+      <%= link_to frontend_contacts_path(@bebox) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+        <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
+      <% end -%>
+      <%= link_to  edit_frontend_contacts_path(@bebox) do %>
+      <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
+      <%end%>
+  </div>
+  
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reference:</dt>
+      <dd><%= @bebox.reference %></dd>
+      <dt>Location:</dt>
+     
+      <dd><%= @bebox.location %></dd>
+      <dt>Categorie:</dt>
+      <dd><%= @bebox.category %></dd>
+      <dt>Client:</dt>
+      <dd><%= @bebox.customer.name %></dd>
+    </dl>
+    <hr class="featurette-devider">
+    <div class="panel-heading">
+        <h3 class="panel-title">Historique des maintenances</h3>
+        <%= link_to 'Ajouter une maintenance', new_backend_maintenance_path(bebox_id: @bebox.id), class: "btn btn-danger" %>
+    </div>
+    <table class="table">
+        <thead>
+            <th>Nr.</th>
+            <th>Categorie</th>
+            <th>Date</th>
+        </thead>
+        <tbody>
+            <% @bebox.maintenances.each do |maintenance| %>
+                <tr>
+                    <td><%= maintenance.id %></td>
+                    <td><%= maintenance.category %></td>
+                    <td><%= maintenance.created_at %></td>
+                </tr>
+            <% end -%>
+        </tbody>
+
+    </table>
+  </div>
+</div>
