@@ -1,0 +1,54 @@
+<% content_for :pagename, "Interventions" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Maintenances", admin_path %>
+  <%= bc_link "Intervention" %>
+<% end %>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Interventions sur Bebox ref. <%= @maintenance.bebox.reference %> de <%= @maintenance.bebox.customer.company %> <span class="badge"></span></h3>
+		<% link_to icon("plus-circle"), new_backend_maintenance_path, class:"btn" %>
+	</div>
+	<div class="panel-body">
+		<div class="row container">
+		    <%=form_for [:backend , @intervention] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4' } do |f| %>
+		        <div class="form-group">
+		            <%= f.label :action, class: "" %>
+		            <%= f.text_field :action, placeholder:"Category" ,class: "form-control transparent",rows: 3, required: true %>
+		        </div>
+		        <div class="form-group">
+		            <%= f.label :part_id, class: "" %>
+		            <%= f.collection_select(:part_id, Part.all,:id, :name,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
+		        </div>
+		        <div class="form-group">
+		            <%= f.hidden_field :maintenance_id, @miantenance.id %>
+		        </div>
+		        <%= f.submit "Ajouter", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+		    <% end %>
+		</div>
+		<hr class="featurette-devider">
+		<div class="row">
+			<div class="col-xs-12 col-md-4 col-md-offset-4">
+				<table class="table">
+					<thead>
+					  <tr>         
+					    <th>Intervention</th>
+					    <th>Piece</th>
+					  </tr>
+					</thead>
+					<tbody>
+						<% @maintenances.interventions.each do |intervention| %>
+							<tr>
+							  <td><%= intervention.action %></td>
+							  <td><%= intervention.part.name %></td>      
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+				<%= limk_to "Maintenance termine", backend_maintenances_path , class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+			</div>
+		</div>
+	</div>
+</div>
+
