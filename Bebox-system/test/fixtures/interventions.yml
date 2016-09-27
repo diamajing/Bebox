@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  action: MyString
+  part: one
+  maintenance: one
+
+two:
+  action: MyString
+  part: two
+  maintenance: two
