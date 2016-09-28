@@ -69,7 +69,7 @@
 <div class="col-lg-4">
   <img class="img-circle" src="<%= image_path "fermer.png" %>" alt="Generic placeholder image" width="140" height="140">
   <h2>VEROUILLER</h2>
-  <p>Les petits casier Bebox sont équipé de serrures sécurisées. Verouiller a clef, Pendant que votre telephone recharge. </p>
+  <p>Les petits casiers Bebox sont équipés de serrures sécurisées. Verouiller a clef, Pendant que votre telephone recharge. </p>
 </div><!-- /.col-lg-4 -->
 <div class="col-lg-4">
   <img class="img-circle" src="<%= image_path "securite.png" %>" alt="Generic placeholder image" width="140" height="140">
@@ -151,56 +151,55 @@
     <a href="https://www.facebook.com/MyBeBox" target=_blank> <i class="fa fa-facebook-official fa-3x facebook"></i></a>
   <p >BeBox <br>(+216)  24 767 992 <br>info@mybebox.tn</p>
 </div>
-<%=form_for [:frontend,@contact] , :html => {class: 'form-horizontal'  } do |f| %>
-<!--<form id="contactForm" class="form-horizontal " role="form" >-->
-   <div class='row'>
-   
+<div class="container">
+    <div class='row'>   
+        <%=form_for [:frontend,@contact] , :html => {class: 'form-horizontal'  } do |f| %>
+           <div class="col-lg-6 col-lg-offset-3 formular">
+               <!--<form class="form-horizontal" role="form">-->
+               <div class="form-group">
+                   <%= f.label :surname , class:"col-sm-3 control-label"%>
+                   <div class="col-sm-7">
+                  <%= f.text_field :surname , class:"form-control" , placeholder:"Prenom", required: true %>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <%= f.label :name , class:'col-sm-3 control-label'%>
+                   <div class="col-sm-7">
+                       <%= f.text_field :name , class:"form-control" , placeholder:"Nom", required: true %>
+                   </div>
+               </div>
+               <div class="form-group" >
+                   <%= f.label :company , class:'col-sm-3 control-label'%>
+                   <div class="col-sm-7">
+                       <%= f.text_field :company ,class:'form-control' , placeholder:'Societe', required: true %>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <%= f.label :email , class:'col-sm-3 control-label'%>
+                   <div class="col-sm-7">
+                       <%= f.text_field :email, class:'form-control', placeholder:'Email', required: true %>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <%= f.label :Telephone , class:'col-sm-3 control-label'%>
+                   <div class="col-sm-7">
+                       <%= f.text_field :Telephone , class:'form-control', placeholder:'Telephone', required: true %>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <%= f.label :message , class:'col-sm-3 control-label'%>
+                   <div class="col-sm-7">
+                       <%= f.text_area :message, class:'form-control', rows:'5' %>
+                   </div>
+               </div>
 
-       <div class="col-lg-6 col-lg-offset-3 formular">
-           <!--<form class="form-horizontal" role="form">-->
-           <div class="form-group">
-               <%= f.label :surname , class:"col-sm-3 control-label"%>
-               <div class="col-sm-7">
-              <%= f.text_field :surname , class:"form-control" , placeholder:"Surname",required: true %>
-               </div>
+               <%= f.submit "Envoyer", id:'form-submit' , class:'btn btn-default btn-form col-sm-7 col-sm-offset-3'%>
+               <div class="form-group">
+                    <div id="msgSubmit" class="col-sm-12  text-center hidden "><p>Message envoye!</p></div>
+                </div>
+               <!--                                    </form>-->
            </div>
-           <div class="form-group">
-               <%= f.label :name , class:'col-sm-3 control-label'%>
-               <div class="col-sm-7">
-                   <%= f.text_field :name , class:"form-control" , placeholder:"Name" %>
-               </div>
-           </div>
-           <div class="form-group" >
-               <%= f.label :company , class:'col-sm-3 control-label'%>
-               <div class="col-sm-7">
-                   <%= f.text_field :company ,class:'form-control' , placeholder:'Company' %>
-               </div>
-           </div>
-           <div class="form-group">
-               <%= f.label :email , class:'col-sm-3 control-label'%>
-               <div class="col-sm-7">
-                   <%= f.text_field :email, class:'form-control', placeholder:'Email' %>
-               </div>
-           </div>
-           <div class="form-group">
-               <%= f.label :Telephone , class:'col-sm-3 control-label'%>
-               <div class="col-sm-7">
-                   <%= f.text_field :Telephone , class:'form-control', placeholder:'Telephone' %>
-               </div>
-           </div>
-           <div class="form-group">
-               <%= f.label :message , class:'col-sm-3 control-label'%>
-               <div class="col-sm-7">
-                   <%= f.text_area :message, class:'form-control', rows:'5' %>
-               </div>
-           </div>
-           
-           <%= f.submit "Envoyer", id:'form-submit' , class:'btn btn-default btn-form col-sm-7 col-sm-offset-3'%>
-           <div class="form-group">
-                <div id="msgSubmit" class="col-sm-12  text-center hidden "><p>Message envoye!</p></div>
-            </div>
-           <!--                                    </form>-->
-       </div>
-   </div>
-<%end%>
+        <%end%>
+    </div>
+</div>
 </div>        

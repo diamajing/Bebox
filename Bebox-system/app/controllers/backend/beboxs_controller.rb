@@ -1,7 +1,7 @@
 class Backend::BeboxsController < BackendController
        
     def index
-    	@bebox = Bebox.all
+    	@bebox = Bebox.order(created_at: :desc)
     end
      
     def create

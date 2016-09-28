@@ -16,7 +16,8 @@
             <%=form_for [:backend,@maintenances] , :html => {class: 'form-horizontal col-xs-12 col-sm-6 col-sm-offset-3' } do |f| %>
                 <div class="form-group">
                     <%= f.label :note, class: "" %>
-                    <%= f.text_field :note, placeholder:"Notices sur l'appel telephonique", class: "form-control transparent", rows: 2, required: true %>
+                    <%= f.text_field :note, placeholder:"Notices sur l'appel telephonique", class: "form-control transparent", rows: 2, required: true %><br>
+                    <%= f.check_box :todo %> A faire
                 </div>
                     <%= f.submit "Ajouter", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
             <% end %>

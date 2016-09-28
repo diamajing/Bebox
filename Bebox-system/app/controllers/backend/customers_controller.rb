@@ -1,6 +1,6 @@
 class Backend::CustomersController < BackendController
 	def index
-		@customer = Customer.all
+		@customer = Customer.order(created_at: :desc)
 	end
   def new
         @customer = Customer.new 

@@ -1,6 +1,6 @@
 class Backend::ContactsController < BackendController
   def index
-  	@contacts = Contact.all 
+  	@contacts = Contact.order(created_at: :desc)
   end
   def create
      @contacts = Contact.new(contact_params)

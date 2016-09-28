@@ -1,4 +1,4 @@
-class Backend::InterventionsController < ApplicationController
+class Backend::InterventionsController < BackendController
 
 	def new
 		@maintenance = Maintenance.find(session[:maintenance])

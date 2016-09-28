@@ -6,9 +6,33 @@
     <h3 class="panel-title">Clients a appeler pour maintenance</span></h3>
   </div>
   <div class="panel-body">
-  	<% @maintenances.each do |bebox| %>
-  		<div class="alert alert-warning" role="alert">
-  			Veuillez appeller <%= bebox.customer.name %> pour la maintenance de sa Bebox <%= link_to bebox.reference, backend_bebox_path(bebox) %> au | <%= bebox.location %>  | <%= bebox.customer.phone %>
+  	<% @tocall.each do |bebox| %>
+  		<div class="alert alert-warning container" role="alert">
+            <div class="col-md-8" style="padding-top:14px;">
+  			   Veuillez appeller <%= bebox.customer.name %> pour la maintenance de sa Bebox <%= link_to bebox.reference, backend_bebox_path(bebox) %> au | <%= bebox.location %>  | <%= bebox.customer.phone %> | 
+            </div>
+            <div class="col-md-4 text-center">
+                <%= link_to 'Ajouter une maintenance', new_backend_maintenance_path(bebox_id: bebox.id), class: "btn btn-warning", style: 'margin-top:8px;' %>
+            </div>
+  		</div>
+	<% end -%>
+  </div>
+</div>
+<br>
+<br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Taches a faire</span></h3>
+  </div>
+  <div class="panel-body">
+  	<% @maintenances.each do |maintenance| %>
+  		<div class="alert alert-danger container" role="alert">
+            <div class="col-md-8" style="padding-top:14px;">
+  			   Veuillez  <%= maintenance.note %> 
+            </div>
+            <div class="col-md-4 text-center">
+                <%= link_to 'Ajouter une maintenance', new_backend_maintenance_path(bebox_id: maintenance.bebox.id, last_id:maintenance.id), class: "btn btn-warning", style: 'margin-top:8px;' %>
+            </div>
   		</div>
 	<% end -%>
   </div>

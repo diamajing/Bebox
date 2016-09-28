@@ -2,10 +2,10 @@ class Frontend::ContactsController < ApplicationController
 	def create
      @contact = Contact.new(contact_params)
      if @contact.save
-        redirect_to  root_path ,notice: "message Ajouter"
+        redirect_to  root_path ,notice: "Message envoye"
      else
         
-      redirect_to root_path , notice:"message n' est pas Ajouter"
+      redirect_to root_path , notice: "Une Erreur s'est produite, le message n'a pas ete envoye. Veuillez essayer encore"
         end 
     end
     def contact_params
