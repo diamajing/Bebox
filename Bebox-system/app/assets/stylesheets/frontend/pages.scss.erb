@@ -1,0 +1,36 @@
+// Place all the styles related to the frontend/pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+	width: 100%;
+
+	.header-price{
+		height: 45vh;
+		background-image: url(<%= image_path "beboxcafe.jpg" %>);
+		background-position: center;
+		background-size: cover;
+		 &:before {
+		    content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 45vh;
+			left: 0;
+			background-image: linear-gradient(to bottom ,rgba(0,0,0,0),#000000);
+			opacity: .7; 
+  		}
+
+  		.header-title{
+		    color: white;
+    		margin-top: 27vh;
+    		font-family: 'Cuprum', sans-serif;
+    		font-weight:700;
+    		font-size: 40px;
+  		}
+
+  		.caption{
+  			color:white;
+  			font-size:25px;
+  		}
+	}
+}

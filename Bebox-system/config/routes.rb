@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
   
 
- 
+ get 'prix', to: 'frontend/pages#price'
 
   namespace :frontend do 
     resources :contacts
   end
-
-
-  
-
-  
-
 
   namespace :backend do
     resources :contacts
