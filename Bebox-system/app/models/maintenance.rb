@@ -1,5 +1,6 @@
 class Maintenance < ApplicationRecord
-  belongs_to :bebox
+    belongs_to :bebox
+    has_many :interventions
 
-  enum category: [:telephone, :intervention]
+    enum category: [:telephone, :intervention]
 end

@@ -6,29 +6,33 @@
 <% end %>
 
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Profile <%= @contacts.name %><span class="badge"></span></h3>
-      <%= link_to backend_contact_path(@contacts) , method: :delete , data: {confirm: "etes vous sure?"} do %>
-        <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
-      <% end -%>
-      
-  </div>
-  <div class="panel-body">
-    <dl class="dl-horizontal">
-      <dt>name:</dt>
-      <dd><%= @contacts.name %></dd>
-      <dt>surname:</dt>
-     
-      <dd><%= @contacts.surname %></dd>
-      <dt>company:</dt>
-      <dd><%= @contacts.company %></dd>
-      <dt>email:</dt>
-      <dd><%= @contacts.email %></dd>
-      <dd><%= @contacts.Telephone %></dd>
-      <dd><%= @contacts.message %></dd>
-    </dl>
-    <hr class="featurette-devider">
-    
-    
-  </div>
+    <div class="panel-heading">
+        <h3 class="panel-title">Profile <%= @contacts.name %><span class="badge"></span></h3>
+        <%= link_to backend_contact_path(@contacts) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+            <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
+        <% end -%>
+    </div>
+    <div class="panel-body">
+        <div class="col-xs-12 col-md-6">
+            <dl class="dl-horizontal">
+                <dt>name:</dt>
+                <dd><%= @contacts.name %></dd>
+                <dt>surname:</dt>
+
+                <dd><%= @contacts.surname %></dd>
+                <dt>company:</dt>
+                <dd><%= @contacts.company %></dd>
+                <dt>email:</dt>
+                <dd><%= @contacts.email %></dd>
+                <dt>Telephone:</dt>
+                <dd><%= @contacts.Telephone %></dd>
+            </dl>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <dl class="dl-horizontal">
+                <dt>Message:</dt>
+                <dd><%= @contacts.message %></dd>
+            </dl>
+        </div>
+    </div>
 </div>

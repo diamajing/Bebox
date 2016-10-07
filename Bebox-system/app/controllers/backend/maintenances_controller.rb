@@ -1,14 +1,24 @@
 class Backend::MaintenancesController < BackendController
+    
   def new
   	@maintenances = Maintenance.new
+    session[:last_id] = params[:last_id]
   end
+    
   def index
-  	@maintenances = Maintenance.all
+  	@maintenances = Maintenance.order(created_at: :desc)
+
   end
 
   def create
-      @maintenances = Maintenance.new(maintenances_params)
+     @maintenances = Maintenance.new(maintenances_params)
+     last_id = session[:last_id]
      if @maintenances.save
+         if last_id != nil
+            last = Maintenance.find(last_id) 
+            last.todo = 0
+            last.save
+         end
         if @maintenances.category == 'telephone'
           render 'note'
         else
@@ -37,9 +47,9 @@ class Backend::MaintenancesController < BackendController
 
   def update
       @maintenances = Maintenance.find(params[:id])
-      if @maintenances.update(maintenances_params)
-      redirect_to backend_maintenances_path ,notice: "Maintenances mise a jour"
-      end 
+          if @maintenances.update(maintenances_params)
+              redirect_to backend_maintenances_path ,notice: "Maintenances mise a jour"
+          end 
      end  
 
   def note(maintenance)
@@ -49,7 +59,7 @@ class Backend::MaintenancesController < BackendController
   private   
 
   def maintenances_params
-		params.require(:maintenance).permit(:category, :bebox_id , :note)
+		params.require(:maintenance).permit(:category, :bebox_id , :note, :todo)
 	end
 
 end

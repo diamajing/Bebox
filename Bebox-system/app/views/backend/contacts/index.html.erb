@@ -6,7 +6,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Contacts <span class="badge"><%= @contacts.count %></span></h3>
+    <h3 class="panel-title">Contacts <span class="badge"><%= @contacts.count %></span></h3>end
     <% link_to icon("plus-circle"), new_backend_contact_path, class:"btn" %>
      <%= link_to new_backend_contact_path do %>
         
@@ -20,15 +20,15 @@
 
 <div class="panel-body">
     <div class="table-responsive">
-      <table class="table table-condensed table-bordered table-striped table-hover">
+      <table class="table table-condensed table-hover">
         <thead>
           <tr>    
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Company</th>
-            <th>Email</th>
-            <th>Telephone</th>
-            <th>Message</th>
+            <th colspan="1">Nom</th>
+            <th colspan="1">Prenom</th>
+            <th colspan="1">Societe</th>
+            <th colspan="1">Email</th>
+            <th colspan="1">Telephone</th>
+            <th colspan="2">Message</th>
             
           </tr>
         </thead>
@@ -40,7 +40,11 @@
               <td><%= contacts.company %></td>
               <td><%= contacts.email %></td>
               <td><%= contacts.Telephone %></td>
-              <td><%= contacts.message %></td>
+              <td class="text-center">
+                  <% if contacts.message.present? %>
+                    <%= link_to '', backend_contact_path(contacts), class: "fa fa-envelope" %>
+                  <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>

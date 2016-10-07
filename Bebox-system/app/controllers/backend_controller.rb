@@ -2,16 +2,20 @@ class BackendController < ApplicationController
 	layout "backend"
 
 	def index
-    	@maintenances = []
+        @maintenances= Maintenance.where(todo: "1").all
+    	@tocall = []
     	beboxes = Bebox.all
     	beboxes.each do |bebox|
     		t = Time.now - 24.hours  
     		puts t
     		if bebox.maintenances.last.present?
 	    		if t > bebox.maintenances.last.created_at
-	    			puts bebox.reference
 	    			@maintenances.push(bebox) 
 	    		end
+            else
+                if t > bebox.created_at
+                    @maintenances.push(bebox)
+                end
     		end
     	end
 	end

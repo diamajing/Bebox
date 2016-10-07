@@ -29,7 +29,7 @@
             <tr>
             <td><%=link_to maintenance.id, backend_maintenance_path(maintenance)  %></td>
               <td><%=  maintenance.category %></td>
-              <td><%= maintenance.bebox_id %></td>
+              <td><%= maintenance.bebox.reference %></td>
               <td><%= maintenance.note %></td>      
             </tr>
           <% end %>
