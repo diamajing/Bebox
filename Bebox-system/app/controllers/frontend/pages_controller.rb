@@ -7,7 +7,7 @@ class Frontend::PagesController < ApplicationController
 	def create
      @contactp = Contact.new(contact_params)
      if @contactp.save
-        redirect_to  root_path ,notice: "votre demande est envoyer"
+        redirect_to  root_path ,notice: "Demande envoyée. Nous vous contacterons bientot!"
      else
         
       redirect_to root_path , notice:"Votre demande n'est pas envoyer essayer une autre fois"

@@ -4,11 +4,12 @@
 </header>
  <div class="panel-body">
 <div class="row container">
+<div class="table">
            <%=form_for [:frontend,@contactp] , :html => {class: 'form-horizontal form-horizontal col-xs-12 col-sm-4 col-sm-offset-4'  } do |f| %> 
             
                 <div class="form-group">
                     <%= f.label :name, class: "" %>
-                    <%= f.text_field :name, placeholder:"Name" ,class: "form-control transparent",rows: 3, required: true %>
+                    <%= f.text_field :name, placeholder:"Name" ,class: "form-control",rows: 3, required: true %>
                 </div>
                 <div class="form-group">
                     <%= f.label :surname, class: "" %>
@@ -33,6 +34,7 @@
                 
                     <%= f.submit "Envoyer", class: "col-xs-8 col-xs-offset-2 btn btn-primary" %>
             <% end %>
+        </div>
         </div>
         </div>
 
