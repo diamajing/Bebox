@@ -5,10 +5,13 @@ body, html {
 	width: 100%;
 
 	.header-price{
+		position: relative;
+		width: 100%;
 		height: 45vh;
 		background-image: url(<%= image_path "beboxcafe.jpg" %>);
 		background-position: center;
 		background-size: cover;
+		box-shadow: 0px 5px 10px grey;
 		 &:before {
 		    content: '';
 			position: absolute;
@@ -21,11 +24,16 @@ body, html {
   		}
 
   		.header-title{
+  			position: absolute;
+  			bottom: 8px;
 		    color: white;
-    		margin-top: 27vh;
     		font-family: 'Cuprum', sans-serif;
     		font-weight:700;
     		font-size: 40px;
+
+    		i{
+    			font-size: 25px;
+    		}
   		}
 
   		.caption{
@@ -33,8 +41,21 @@ body, html {
   			font-size:25px;
   		}
 	}
-	.table {
-	margin-left: 130px;
-    margin-top: 13px;
+
+	.form-section{
+
+		form{
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
 	}
+
+	
+	footer{
+		font-size: 20px;
+		line-height: 1.42857;
+	}	
+	
+
 }
+

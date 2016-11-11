@@ -1,11 +1,13 @@
 <header class="header-price container-row">
-	<h2 class="header-title col-xs-12 text-center">Demander le prix</h2>
-	<div class="caption col-xs-12 text-center"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+	<h2 class="header-title col-xs-12 text-center">Demander le prix<br><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </h2>
+
 </header>
- <div class="panel-body">
-<div class="row container">
-<div class="table">
-           <%=form_for [:frontend,@contactp] , :html => {class: 'form-horizontal form-horizontal col-xs-12 col-sm-4 col-sm-offset-4'  } do |f| %> 
+
+<div class="container form-section">
+    <div class="row">
+        <div class="container">
+           <%=form_for [:frontend,@contactp] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4'  } do |f| %> 
             
                 <div class="form-group">
                     <%= f.label :name, class: "" %>
@@ -26,16 +28,14 @@
                 <div class="form-group">
                     <%= f.label :Telephone, class: "" %>
                     <%= f.text_field :Telephone, placeholder:"Telephone", class: "form-control ", rows: 3, required: true %>
-                </div>
-                
+                </div>  
+                <%= f.hidden_field :message, :value=>'demande de prix' %>
                     
-                    <%= f.hidden_field :message, :value=>'demande de prix' %>
-                
-                
-                    <%= f.submit "Envoyer", class: "col-xs-8 col-xs-offset-2 btn btn-primary" %>
+                <%= f.submit "Envoyer", class: "col-xs-8 col-xs-offset-2 btn btn-primary" %>
             <% end %>
         </div>
-        </div>
-        </div>
+    </div>
+</div>
+
 
 </div>

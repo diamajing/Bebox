@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Pacifico">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 	<title>Price Page!</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'frontend' %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
     <script src="https://use.fontawesome.com/eae48e4e0d.js"></script>
 </head>
 <body>
 <%= yield %>
 
 <footer class="container">
-<p class="pull-right"><a href="#">Retour en haut.</a></p>
-<p>&copy; 2016 made with <i class="fa fa-heart"></i> by BeBox, Sarl. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <p class="pull-right"><a href="#">Retour en haut.</a></p>
+    <p>&copy; 2016 made with <i class="fa fa-heart"></i> by BeBox, Sarl. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
 
 </body>
