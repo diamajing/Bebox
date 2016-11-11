@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
 
- get 'prix', to: 'frontend/pages#price'
+ get 'prix', to: 'frontend/pages#price', as: 'jihed_messoud'
 
   namespace :frontend do 
     resources :contacts
