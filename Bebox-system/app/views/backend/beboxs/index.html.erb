@@ -24,6 +24,8 @@
           <tr>    
             <th>Reference</th>
             <th>Location</th>
+            <th>longitude</th>
+            <th>altitude</th>
             <th>Categorie</th>
             <th>Client</th>
             
@@ -34,6 +36,8 @@
             <tr>
               <td><%= link_to bebox.reference, backend_bebox_path(bebox) %></td>
               <td><%= bebox.location %></td>
+              <td><%= bebox.longitude %></td>
+              <td><%= bebox.laltitude %></td>
               <td><%= bebox.category %></td>
               <td><%= bebox.customer.name %></td>
             </tr>

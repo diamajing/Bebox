@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928183211) do
+ActiveRecord::Schema.define(version: 20170116212934) do
 
   create_table "beboxes", force: :cascade do |t|
     t.string   "reference"
     t.string   "location"
     t.integer  "category"
     t.integer  "customer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "laltitude",   default: "35.8293395"
+    t.string   "longitude",   default: "10.5854338"
     t.index ["customer_id"], name: "index_beboxes_on_customer_id"
   end
 

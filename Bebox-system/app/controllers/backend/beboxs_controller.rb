@@ -48,6 +48,6 @@ class Backend::BeboxsController < BackendController
     end      
 
     def bebox_params
-  		params.require(:bebox).permit(:reference, :location , :category , :customer_id)
+  		params.require(:bebox).permit(:reference, :location , :longitude , :laltitude , :category , :customer_id)
   	end
 end
