@@ -27,6 +27,14 @@
                     <%= f.text_field :location, placeholder:"Location", class: "form-control ", rows: 3, required: true %>
                 </div>
                 <div class="form-group">
+                    <%= f.label :longitude, class: "" %>
+                    <%= f.text_field :longitude, placeholder:"longitude", class: "form-control ", rows: 3, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :laltitude, class: "" %>
+                    <%= f.text_field :laltitude, placeholder:"laltitude", class: "form-control ", rows: 3, required: true %>
+                </div>
+                <div class="form-group">
                     <%= f.label :category, class: "" %>
                     <%= f.select(:category, Bebox.categories.keys.to_a,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
                 </div>

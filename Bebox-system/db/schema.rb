@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170116212934) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "beboxes", force: :cascade do |t|
     t.string   "reference"
     t.string   "location"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170116212934) do
     t.datetime "updated_at",                         null: false
     t.string   "laltitude",   default: "35.8293395"
     t.string   "longitude",   default: "10.5854338"
-    t.index ["customer_id"], name: "index_beboxes_on_customer_id"
+    t.index ["customer_id"], name: "index_beboxes_on_customer_id", using: :btree
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -50,8 +53,8 @@ ActiveRecord::Schema.define(version: 20170116212934) do
     t.integer  "maintenance_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["maintenance_id"], name: "index_interventions_on_maintenance_id"
-    t.index ["part_id"], name: "index_interventions_on_part_id"
+    t.index ["maintenance_id"], name: "index_interventions_on_maintenance_id", using: :btree
+    t.index ["part_id"], name: "index_interventions_on_part_id", using: :btree
   end
 
   create_table "maintenances", force: :cascade do |t|
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 20170116212934) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "todo",       default: 0
-    t.index ["bebox_id"], name: "index_maintenances_on_bebox_id"
+    t.index ["bebox_id"], name: "index_maintenances_on_bebox_id", using: :btree
   end
 
   create_table "parts", force: :cascade do |t|
@@ -70,4 +73,8 @@ ActiveRecord::Schema.define(version: 20170116212934) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "beboxes", "customers"
+  add_foreign_key "interventions", "maintenances"
+  add_foreign_key "interventions", "parts"
+  add_foreign_key "maintenances", "beboxes"
 end
