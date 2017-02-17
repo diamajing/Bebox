@@ -19,7 +19,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: beats_database
+  database: bebox_database
   host: localhost
   username: rails
   password: XUQEsieZOD
