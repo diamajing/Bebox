@@ -16,3 +16,11 @@ test:
   host: localhost
   pool: 5
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: beats_database
+  host: localhost
+  username: rails
+  password: XUQEsieZOD
+  pool: 5
