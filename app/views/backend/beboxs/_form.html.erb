@@ -31,6 +31,10 @@
                     <%= f.label :customer_id, class: "" %>
                     <%= f.collection_select(:customer_id, Customer.all,:id, :name ,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
                 </div>
+                <div class="form-group">
+                    <%= f.label :price %>
+                    <%= f.text_field :price, placeholder:"prix", class: "form-control ", rows: 3, required: true %>
+                </div>
                 
                     <%= f.submit "Ajouter", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
             <% end %>

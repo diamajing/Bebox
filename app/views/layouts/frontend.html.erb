@@ -3,6 +3,7 @@
   <head>
     <title>Bebox !</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Des casiers a clefs pour recharger votre smartphone dans les endroits publiques en toute securite">
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -30,7 +31,7 @@
         <li class="active" class="js-scrollTo"><a href="#">Home</a></li>
         <li><a href="#referances" class="js-scrollTo">Referances</a></li>
         <li><a href="#contact" class="js-scrollTo">Contact</a></li>
-        <li><%= bc_link "Demande de prix", jihed_messoud_path%></li>
+        <li><%= bc_link "Demande de prix", price_path%></li>
 
         
       </ul>
@@ -57,7 +58,7 @@
 <!-- FOOTER -->
 <footer>
 <p class="pull-right"><a href="#">Retour en haut.</a></p>
-<p>&copy; 2016 made with <i class="fa fa-heart"></i> by BeBox, Sarl. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+<p>&copy; 2017 made with <i class="fa fa-heart"></i> by BeBox, Sarl. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
 
 </div><!-- /.container -->

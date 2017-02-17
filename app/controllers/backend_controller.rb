@@ -1,6 +1,6 @@
 class BackendController < ApplicationController
 	layout "backend"
-   
+    http_basic_authenticate_with name: "info@mybebox.tn", password: "beboxkey"
 
 	def index
         @maintenances= Maintenance.where(todo: "1").all

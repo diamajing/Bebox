@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
 
   devise_for :users
- get 'prix', to: 'frontend/pages#price', as: 'jihed_messoud'
+ get 'prix', to: 'frontend/pages#price', as: 'price'
 
  get 'maps', to: 'frontend/pages#maps', as: 'maps'
 
