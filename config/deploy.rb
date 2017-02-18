@@ -3,7 +3,7 @@ server '139.59.139.154', roles: [:web, :app, :db], primary: true
 set :application, 'bebox'
 set :repo_url, 'https://github.com/amine4videri/Bebox.git'
 set :rbenv_ruby, '2.2.4'
-set :user, 'rails'
+set :user, 'bebox'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
