@@ -21,5 +21,6 @@ production:
   encoding: unicode
   database: bebox_database
   host: localhost
-  username: bebox
+  username: postgres
+  password: beboxkey
   pool: 5
