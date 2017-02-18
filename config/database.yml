@@ -21,6 +21,6 @@ production:
   encoding: unicode
   database: bebox_database
   host: localhost
-  username: rails
-  password: XUQEsieZOD
+  username: bebox
+  password: beboxkey
   pool: 5
