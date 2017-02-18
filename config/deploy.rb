@@ -1,4 +1,4 @@
-server '207.154.202.74', roles: [:web, :app, :db], primary: true
+server '139.59.135.167', roles: [:web, :app, :db], primary: true
 
 set :application, 'bebox'
 set :repo_url, 'https://github.com/amine4videri/Bebox.git'
