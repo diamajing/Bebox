@@ -8,26 +8,81 @@
 
 
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Profile <span class="badge"></span></h3>
-      <%= link_to  backend_maintenance_path(@maintenances) , method: :delete , data: {confirm: "etes vous sure?"} do %>
-        <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
-      <% end -%>
-      <%= link_to  edit_backend_maintenance_path(@maintenances) do %>
-      <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
-      <%end%>
-  </div>
-  
-  <div class="panel-body">
-    <dl class="dl-horizontal">
-      <dt>category:</dt>
-      <dd><%= @maintenances.category %></dd>
-      <dt>bebox_id:</dt>
-     
-      <dd><%= @maintenances.bebox_id %></dd>
-      <dt>note:</dt>
-      <dd><%= @maintenances.note %></dd>
-      
-    </dl>
+    <div class="panel-heading">
+        <h3 class="panel-title">Profile <span class="badge"></span></h3>
+        <%= link_to  backend_maintenance_path(@maintenances) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+            <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
+        <% end -%>
+        <%= link_to  edit_backend_maintenance_path(@maintenances) do %>
+            <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
+        <%end%>
+        <button class="fa fa-calendar fa-2x calender" aria-hidden="true" style="margin-right:5px;border:none;background-color:transparent;"  data-toggle="modal" data-target="#myModal" ></button>
+    </div>
+    <div class="panel-body">
+        <div class="col-xs-12 col-sm-6">
+            <dl class="dl-horizontal">
+                <dt>category:</dt>
+                <dd><%= @maintenances.category %></dd>
+                <dt>Referance bebox:</dt>
+                <dd><%= @maintenances.bebox.reference %></dd>
+                <dt>Date :</dt>
+                <dd><%= @maintenances.created_at.strftime("%d / %m / %y") %></dd>
+                <% if @maintenances.note.present? %>
+                    <dt>note:</dt>
+                    <dd><%= @maintenances.note %></dd>
+                <% end %>
+            </dl>
+        </div>
+        <% if @maintenances.category == 'intervention' %>
+            <div class="col-xs-12 col-sm-6">
+                <table class="table">
+                    <thead>
+                        <tr> 
+                            <th>Action</th>        
+                            <th>Piece</th> 
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @maintenances.interventions.each do |intervention| %>
+                            <tr>
+                                <td><%= intervention.action %></td>
+                                <td><%= intervention.part.name %></td>
+                                <td>
+                                    <%= link_to  backend_intervention_path(intervention) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    <% end %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                  </table> 
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog" style="margin-top:80px;">
+  <div class="modal-dialog" style="z-index:10000;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Changer la date de vente</h4>
+      </div>
+      <div class="modal-body">
+         <%=form_for [:backend,@maintenances] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4' } do |f| %>
+            <div class="form-group">
+                <%= f.label :date, class: "" %>
+                <%= f.text_field :created_at ,class: "form-control transparent datepicker",rows: 3, required: true %>
+            </div>
+      </div>
+      <div class="modal-footer">
+          <%= f.submit "Modifier", class: "btn btn-default" %>
+      </div>
+        <% end %>
+    </div>
+
   </div>
 </div>

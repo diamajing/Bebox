@@ -13,6 +13,14 @@ class Backend::InterventionsController < BackendController
 			redirect_to new_backend_intervention_path, alert: "L'intervention n'a pas ete ajoute"
 		end
 	end
+    
+    def destroy
+        intervention = Intervention.find(params[:id])
+        maintenance = intervention.maintenance
+        if intervention.destroy
+          redirect_to backend_maintenance_path(maintenance) ,notice: "Intervention supprime"
+        end
+    end
 
   private   
 

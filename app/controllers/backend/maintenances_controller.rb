@@ -46,9 +46,9 @@ class Backend::MaintenancesController < BackendController
   end 
 
   def update
-      @maintenances = Maintenance.find(params[:id])
-          if @maintenances.update(maintenances_params)
-              redirect_to backend_maintenances_path ,notice: "Maintenances mise a jour"
+      maintenance = Maintenance.find(params[:id])
+          if maintenance.update(maintenances_params)
+              redirect_to backend_maintenance_path(maintenance) ,notice: "Maintenances mise a jour"
           end 
      end  
 
@@ -59,7 +59,7 @@ class Backend::MaintenancesController < BackendController
   private   
 
   def maintenances_params
-		params.require(:maintenance).permit(:category, :bebox_id , :note, :todo)
+		params.require(:maintenance).permit(:category, :bebox_id , :note, :todo, :created_at)
 	end
 
 end

@@ -14,9 +14,7 @@
       <%= link_to  edit_backend_bebox_path(@bebox) do %>
         <i class="fa fa-pencil fa-2x pancel" aria-hidden="true" style="margin:5px;"></i>
       <%end%>
-      <a>
-        <button class="fa fa-calendar fa-2x calender" aria-hidden="true" style="margin:5px;border:none;background-color:transparent;"  data-toggle="modal" data-target="#myModal" ></button>
-      </a>
+      <button class="fa fa-calendar fa-2x calender" aria-hidden="true" style="margin:5px;border:none;background-color:transparent;"  data-toggle="modal" data-target="#myModal" ></button>
   </div>
   
   <div class="panel-body">
@@ -52,7 +50,7 @@
                 <tr>
                     <td><%= maintenance.id %></td>
                     <td><%= maintenance.category %></td>
-                    <td><%= maintenance.created_at %></td>
+                    <td><%= maintenance.created_at.strftime("%d / %m / %y") %></td>
                 </tr>
             <% end -%>
         </tbody>
