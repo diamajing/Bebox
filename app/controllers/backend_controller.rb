@@ -7,7 +7,7 @@ class BackendController < ApplicationController
     	@tocall = []
     	beboxes = Bebox.all
     	beboxes.each do |bebox|
-    		t = Time.now - 24.hours  
+    		t = Time.now - 720.hours  
     		puts t
     		if bebox.maintenances.last.present?
 	    		if t > bebox.maintenances.last.created_at

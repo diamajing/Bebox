@@ -34,7 +34,7 @@ class Backend::BeboxsController < BackendController
     def update
         @bebox = Bebox.find(params[:id])
         if @bebox.update(bebox_params)
-            redirect_to backend_beboxs_path ,notice: "Bebox mise a jour"
+            redirect_to backend_bebox_path(@bebox) ,notice: "Bebox mise a jour"
         end 
     end   
 

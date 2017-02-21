@@ -43,8 +43,6 @@ GEM
     arel (7.1.4)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
-    bootstrap-datepicker-rails (1.6.1)
-      railties (>= 3.0)
     builder (3.2.3)
     byebug (9.0.6)
     capistrano (3.6.1)
@@ -197,7 +195,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bootstrap-datepicker-rails
   byebug
   capistrano
   capistrano-bundler
