@@ -9,11 +9,14 @@
   <div class="panel-heading">
     <h3 class="panel-title">Profile <%= @bebox.reference %><span class="badge"></span></h3>
       <%= link_to backend_bebox_path(@bebox) , method: :delete , data: {confirm: "etes vous sure?"} do %>
-        <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
+        <i class="fa fa-trash fa-2x trash" style="margin:5px;" aria-hidden="true"></i>
       <% end -%>
       <%= link_to  edit_backend_bebox_path(@bebox) do %>
-      <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
+        <i class="fa fa-pencil fa-2x pancel" aria-hidden="true" style="margin:5px;"></i>
       <%end%>
+      <a>
+        <button class="fa fa-calendar fa-2x calender" aria-hidden="true" style="margin:5px;border:none;background-color:transparent;"  data-toggle="modal" data-target="#myModal" ></button>
+      </a>
   </div>
   
   <div class="panel-body">
@@ -30,6 +33,8 @@
       <dd><%= @bebox.category %></dd>
       <dt>Client:</dt>
       <dd><%= @bebox.customer.name %></dd>
+      <dt>Date de vente:</dt>
+      <dd><%= @bebox.created_at.strftime("%d / %m / %y") %></dd>
     </dl>
     <hr class="featurette-devider">
     <div class="panel-heading">
@@ -55,3 +60,38 @@
     </table>
   </div>
 </div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" style="margin-top:80px;">
+  <div class="modal-dialog" style="z-index:10000;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Changer la date de vente</h4>
+      </div>
+      <div class="modal-body">
+         <%=form_for [:backend,@bebox] , :html => {class: 'form-horizontal', style: 'padding:25px;' } do |f| %>
+                <div class="form-group">
+                    <%= f.label :date, class: "" %>
+                    <%= f.text_field :created_at ,class: "form-control transparent datepicker",rows: 3, required: true %>
+                </div>
+         <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>
+<style>
+     *= require bootstrap-datepicker ;
+</style>

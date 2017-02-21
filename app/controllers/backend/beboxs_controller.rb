@@ -14,10 +14,6 @@ class Backend::BeboxsController < BackendController
         end 
     end
 
-    
-
-
-
 
     def new
         @bebox = Bebox.new 
@@ -29,6 +25,10 @@ class Backend::BeboxsController < BackendController
 
     def edit
     	@bebox = Bebox.find(params[:id])
+    end
+    
+    def edit_date
+        @bebox = Bebox.find(params[:id])
     end
 
     def update
@@ -48,6 +48,6 @@ class Backend::BeboxsController < BackendController
     end      
 
     def bebox_params
-  		params.require(:bebox).permit(:reference, :location , :longitude , :laltitude , :category , :customer_id)
+  		params.require(:bebox).permit(:reference, :location , :longitude , :laltitude , :category , :customer_id, :price, :created_at)
   	end
 end

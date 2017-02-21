@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise'
 
-
+gem 'bootstrap-datepicker-rails'  #date picker hier changeeeee it
 gem "chartkick"
 gem 'groupdate'
 # See https://github.com/rails/execjs#readme for more supported runtimes

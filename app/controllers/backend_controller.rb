@@ -20,4 +20,7 @@ class BackendController < ApplicationController
     		end
     	end
 	end
+    
+    def ineventory
+    end
 end

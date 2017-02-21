@@ -3,6 +3,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require bootstrap-datepicker
 //= require bootstrap/affix
 //= require bootstrap/alert
 //= require bootstrap/button

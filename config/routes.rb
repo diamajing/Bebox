@@ -26,4 +26,6 @@ Rails.application.routes.draw do
 
     root "frontend#index"
     get "admin", to: "backend#index", as: "admin"
+    get "management", to: "backend#index"
+    get "backend/inventory", to: "backend#inventory", as: "inventory"
 end
