@@ -28,7 +28,7 @@
   	<% @maintenances.each do |maintenance| %>
   		<div class="alert alert-danger container" role="alert">
             <div class="col-md-8" style="padding-top:14px;">
-  			   Veuillez  <%= maintenance.note %> 
+  			   Veuillez  <%= maintenance.note %> | Bebox: <%= maintenance.bebox.reference %> | Clien: <%= maintenance.bebox.customer.name %> | Emplacement: <%= maintenance.bebox.location %>
             </div>
             <div class="col-md-4 text-center">
                 <%= link_to 'Ajouter une maintenance', new_backend_maintenance_path(bebox_id: maintenance.bebox.id, last_id:maintenance.id), class: "btn btn-warning", style: 'margin-top:8px;' %>
