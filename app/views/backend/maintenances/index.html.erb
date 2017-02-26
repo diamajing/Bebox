@@ -18,10 +18,13 @@
       <table class="table table-condensed table-bordered table-striped table-hover">
         <thead>
           <tr> 
-            <th>Nr.</th>        
-            <th>Categorie</th>
-            <th>Bebox</th>
-            <th>note</th>   
+            <th style="width:5%;">Nr.</th>        
+            <th style="width:10%;">Categorie</th>
+            <th style="width:10%;">Bebox</th>
+            <th style="width:50%;">note</th>
+            <th style="width:15%;">date</th>
+            <th style="width:5%;">Prix</th>
+            <th style="width:5%;">Supprimer</th>
           </tr>
         </thead>
         <tbody>
@@ -29,8 +32,28 @@
             <tr>
             <td><%=link_to maintenance.id, backend_maintenance_path(maintenance)  %></td>
               <td><%=  maintenance.category %></td>
-              <td><%= maintenance.bebox.reference if maintenance.bebox.present? %></td>
-              <td><%= maintenance.note %></td>      
+              <td>
+                  <%= link_to backend_bebox_path(maintenance.bebox) do %>  
+                    <%= maintenance.bebox.reference if maintenance.bebox.present? %>
+                  <% end %>
+              </td>
+              <td>
+                  <% if maintenance.category  == 'telephone' %>
+                    <%= maintenance.note %>
+                  <% else %>
+                    <%= 'changement: ' if maintenance.interventions.count > 0 %>
+                    <% maintenance.interventions.each do |intervention| %>
+                        <%= intervention.part.name %> |
+                    <% end %>
+                  <% end %>
+              </td>
+              <td><%= maintenance.created_at.strftime("%d / %m / %y a %H : %M") %></td>
+              <td><%= maintenance.price %></td>
+              <td>
+                  <%= link_to  backend_maintenance_path(maintenance) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+                    <i class="fa fa-trash trash" aria-hidden="true"></i>
+                  <% end -%>
+              </td>
             </tr>
           <% end %>
         </tbody>

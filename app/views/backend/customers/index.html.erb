@@ -27,8 +27,8 @@
             <th>Name</th>
             <th>Phone</th>
             <th>Company</th>
+            <th>Beboxes</th> 
             <th>Email</th>
-            
           </tr>
         </thead>
         <tbody>
@@ -36,9 +36,13 @@
             <tr>
               <td><%= link_to customer.name, backend_customer_path(customer) %></td>
               <td><%= customer.phone %></td>
-              <td><%= customer.email %></td>
               <td><%= customer.company %></td>
-              
+              <td>
+                  <% customer.beboxes.each do |bebox| %>
+                    <%= bebox.reference  %> |
+                  <% end %>
+              </td>
+              <td><%= customer.email %></td>
             </tr>
           <% end %>
         </tbody>

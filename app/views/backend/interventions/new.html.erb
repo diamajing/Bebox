@@ -47,7 +47,14 @@
 						<% end %>
 					</tbody>
 				</table>
-				<%= link_to "Maintenance termine", backend_maintenances_path , notice: "Maintenance ajoute", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+                <hr class="featurette-devider">
+                <%=form_for [:backend,@maintenance] ,:method => 'patch', :html => {class: 'form-horizontal col-xs-12 col-sm-6 col-sm-offset-3' } do |f| %>
+                    <div class="form-group">
+                            <%= f.label 'prix de la maintenance' %>
+                            <%= f.text_field :price, class: "form-control transparent", rows: 2, required: true %>
+                    </div>
+                    <%= f.submit "Maintenance termine", class: 'btn btn-danger' %>
+                <% end %>
 			</div>
 		</div>
 	</div>

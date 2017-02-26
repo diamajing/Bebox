@@ -26,7 +26,7 @@ class Backend::MaintenancesController < BackendController
           redirect_to new_backend_intervention_path(@maintenance)
        end
      else
-        redirect_to backend_maintenances_path, alert: "Une erruer s'est produite, la maintenace n'a pas ete ajouter"
+        redirect_to backend_maintenances_path, alert: "Une erreur s'est produite, la maintenace n'a pas ete ajouter"
       end 
   end 
 
@@ -59,7 +59,7 @@ class Backend::MaintenancesController < BackendController
   private   
 
   def maintenances_params
-		params.require(:maintenance).permit(:category, :bebox_id , :note, :todo, :created_at)
+		params.require(:maintenance).permit(:category, :bebox_id , :note, :todo, :created_at, :price)
 	end
 
 end

@@ -8,8 +8,7 @@
   <div class="panel-heading">
     <h3 class="panel-title">Beboxes <span class="badge"><%= @bebox.count %></span></h3>
     <% link_to icon("plus-circle"), new_backend_bebox_path, class:"btn" %>
-     <%= link_to new_backend_bebox_path do %>
-        
+     <%= link_to new_backend_bebox_path do %>      
         <i class="fa fa-plus-circle fa-2x trash " aria-hidden="true"></i>
       <% end -%>
   </div>
@@ -22,12 +21,12 @@
       <table class="table table-condensed table-bordered table-striped table-hover">
         <thead>
           <tr>    
-            <th>Reference</th>
-            <th>Location</th>
-            <th>Categorie</th>
-            <th>Client</th>
-            <th>Prix</th>
-            
+            <th style="width:15%;">Reference</th>
+            <th style="width:25%;">Location</th>
+            <th style="width:15%;">Categorie</th>
+            <th style="width:15%;">Client</th>
+            <th style="width:15%;">Prix</th>
+            <th style="width:15%;">Date</th>
           </tr>
         </thead>
         <tbody>
@@ -36,8 +35,13 @@
               <td><%= link_to bebox.reference, backend_bebox_path(bebox) %></td>
               <td><%= bebox.location %></td>
               <td><%= bebox.category %></td>
-              <td><%= bebox.customer.name %></td>
+              <td>
+                  <%= link_to backend_customer_path(bebox.customer) do %>
+                    <%= bebox.customer.name %>
+                  <% end %>
+              </td>
               <td><%= bebox.price %></td>
+              <td><%= bebox.created_at.strftime("%d / %m / %y") %></td>
             </tr>
           <% end %>
         </tbody>

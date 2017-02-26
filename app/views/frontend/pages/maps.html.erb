@@ -1,35 +1,104 @@
-<div id="map" style="width:100%;height:650px"></div>
+<div id="map" style="width:100%;height:100vh" >
+    
+</div>
+<div class="info-bebox text-center">
+        La Bebox la plus proche est au <br>
+        <span id="nearest-bebox"></span><br>
+        </span>
+    </div>
+<style>
+    .info-bebox{
+        display: block;
+        width:80%;
+        left: 10%;
+        position: absolute;
+        top: 55px;
+        height: 50px;
+        background-color: white;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+        z-index: 1000;
+        padding: 4px;
+    }
+</style>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAioJiUs5vlpBSiWUsEIEgDP3NK_bUNP_s"></script>
 <script type="text/javascript">
+    
 
     // Standard google maps function
     function initialize() {
         var myLatlng = new google.maps.LatLng(35.8293242,10.5504128);
         var myOptions = {
-            zoom: 12,
+            zoom: 13,
             center: myLatlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         map = new google.maps.Map(document.getElementById("map"), myOptions);
         TestMarker();
+        
+        var infowindow = new google.maps.InfoWindow({
+            content: 'hi'
+          });
+     
+         if (navigator.geolocation) {
+             navigator.geolocation.getCurrentPosition(function (position) {
+                 initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                 myPosition = new google.maps.Circle({
+                  center:initialLocation,
+                  radius:50,
+                  strokeColor:"#0000FF",
+                  strokeOpacity:0.8,
+                  strokeWeight:2,
+                  fillColor:"#0000FF",
+                  fillOpacity:0.4
+                });
+                 map.setCenter(initialLocation);
+                 myPosition.setMap(map);
+                 document.getElementById("nearest-bebox").innerHTML = findNearestBebox(position);
+             });
+         }
     }
 
-    // Function for adding a marker to the page.
-    function addMarker(location) {
-        marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-    }
+ // Function for adding a marker to the page.
+ function addMarker(location) {
+    marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        icon: "<%= image_path 'rsz_2logo.png' %>"  ,
+        animation: google.maps.Animation.BOUNCE
+    });
+ }
+    
+ 
+// Testing the addMarker function
+function TestMarker() {
+    <% @beboxs = Bebox.all %>
+    <% @beboxs.each do |bebox| %>
+        position = new google.maps.LatLng(<%= bebox.laltitude %>,<%= bebox.longitude %>);
+        addMarker(position);
+    <% end %>
+}
 
-    // Testing the addMarker function
-    function TestMarker() {
-        <% @bebox = Bebox.all %>
-        <% @bebox.each do |bebox| %>
-           CentralPark = new google.maps.LatLng(<%= bebox.laltitude %>,<%= bebox.longitude %>);
-           addMarker(CentralPark);
-           <% end %>
-    }
+function findNearestBebox(position){
+    var indicator = []
+    var origin = []
+    var bebox_locations = []
+    var i = 0
+    var j = 0
+    <% @beboxs.each do |bebox| %>
+       indicator[i] = position.coords.latitude - <%= bebox.laltitude %> + position.coords.longitude - <%= bebox.longitude %> ;
+       origin[i] =  position.coords.latitude - <%= bebox.laltitude %> + position.coords.longitude - <%= bebox.longitude %> ;
+       bebox_locations[i] = "<%= bebox.location %>" ;
+       i = i + 1 ;
+    <% end %>
+    indicator.sort(function(a, b){return a-b}); 
+    j = origin.indexOf(indicator[0]);
+    console.log(indicator[0]);    
+    console.log(bebox_locations[j]);
+    return bebox_locations[j];
+}
+
+    
+ initialize();
+ TestMarker();
 </script>
-
-<script src="https://maps.googleapis.com/maps/api/js?callback=initialize"></script>
