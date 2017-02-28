@@ -2,7 +2,8 @@
     
 </div>
 <div class="info-bebox text-center">
-        La Bebox la plus proche est au <br>
+        <span id="nearest-bebox-description">Desole le service de localisation est actuellement indisponible<br>
+        Veuillez attendre quelques secondes ou bien verifier vos parametres de geolocalisation</span><br>
         <span id="nearest-bebox"></span><br>
         </span>
     </div>
@@ -13,7 +14,7 @@
         left: 10%;
         position: absolute;
         top: 55px;
-        height: 50px;
+        min-height: 50px;
         background-color: white;
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
         z-index: 1000;
@@ -54,6 +55,7 @@
             });
             map.setCenter(initialLocation);
             myPosition.setMap(map);
+            document.getElementById("nearest-bebox-description").innerHTML = "La Bebox la plus proche est au ";
             document.getElementById("nearest-bebox").innerHTML = findNearestBebox(position);
          });
         }
