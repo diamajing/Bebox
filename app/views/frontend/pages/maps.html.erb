@@ -27,9 +27,9 @@
 
     // Standard google maps function
     function initialize() {
-        var myLatlng = new google.maps.LatLng(35.8293242,10.5504128);
+        var myLatlng = new google.maps.LatLng(35.839779, 10.622364);
         var myOptions = {
-            zoom: 13,
+            zoom: 15,
             center: myLatlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
@@ -40,65 +40,71 @@
             content: 'hi'
           });
      
-         if (navigator.geolocation) {
-             navigator.geolocation.getCurrentPosition(function (position) {
-                 initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                 myPosition = new google.maps.Circle({
-                  center:initialLocation,
-                  radius:50,
-                  strokeColor:"#0000FF",
-                  strokeOpacity:0.8,
-                  strokeWeight:2,
-                  fillColor:"#0000FF",
-                  fillOpacity:0.4
-                });
-                 map.setCenter(initialLocation);
-                 myPosition.setMap(map);
-                 document.getElementById("nearest-bebox").innerHTML = findNearestBebox(position);
-             });
-         }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                myPosition = new google.maps.Circle({
+                center:initialLocation,
+                radius:50,
+                strokeColor:"#FFFFFF",
+                strokeOpacity:0.8,
+                strokeWeight:4,
+                fillColor:"#0000FF",
+                fillOpacity:0.4
+            });
+            map.setCenter(initialLocation);
+            myPosition.setMap(map);
+            document.getElementById("nearest-bebox").innerHTML = findNearestBebox(position);
+         });
+        }
     }
 
  // Function for adding a marker to the page.
- function addMarker(location) {
-    marker = new google.maps.Marker({
-        position: location,
-        map: map,
-        icon: "<%= image_path 'rsz_2logo.png' %>"  ,
-        animation: google.maps.Animation.BOUNCE
-    });
- }
+    function addMarker(location) {
+        
+    }
     
  
 // Testing the addMarker function
-function TestMarker() {
-    <% @beboxs = Bebox.all %>
-    <% @beboxs.each do |bebox| %>
-        position = new google.maps.LatLng(<%= bebox.laltitude %>,<%= bebox.longitude %>);
-        addMarker(position);
-    <% end %>
-}
+    function TestMarker() {
+        <% @beboxs = Bebox.all %>
+        <% @beboxs.each do |bebox| %>
+            var infowindow<%= bebox.id %> = new google.maps.InfoWindow({
+                content: '<%= bebox.location %>'
+              });
+            location<%= bebox.id %> = new google.maps.LatLng(<%= bebox.laltitude %>,<%= bebox.longitude %>);
+            marker<%= bebox.id %> = new google.maps.Marker({
+            position: location<%= bebox.id %>,
+            map: map,
+            icon: "<%= image_path 'rsz_2logo.png' %>"  ,
+            animation: google.maps.Animation.BOUNCE
+        });
+        
+        marker<%= bebox.id %>.addListener('click', function() {
+            infowindow<%= bebox.id %>.open(map, marker<%= bebox.id %>);
+        });
+        <% end %>
+    }
 
-function findNearestBebox(position){
-    var indicator = []
-    var origin = []
-    var bebox_locations = []
-    var i = 0
-    var j = 0
-    <% @beboxs.each do |bebox| %>
-       indicator[i] = position.coords.latitude - <%= bebox.laltitude %> + position.coords.longitude - <%= bebox.longitude %> ;
-       origin[i] =  position.coords.latitude - <%= bebox.laltitude %> + position.coords.longitude - <%= bebox.longitude %> ;
-       bebox_locations[i] = "<%= bebox.location %>" ;
-       i = i + 1 ;
-    <% end %>
-    indicator.sort(function(a, b){return a-b}); 
-    j = origin.indexOf(indicator[0]);
-    console.log(indicator[0]);    
-    console.log(bebox_locations[j]);
-    return bebox_locations[j];
-}
+    function findNearestBebox(position){
+        var indicator = []
+        var origin = []
+        var bebox_locations = []
+        var i = 0
+        var j = 0
+        <% @beboxs.each do |bebox| %>
+           indicator[i] = position.coords.latitude - <%= bebox.laltitude %> + position.coords.longitude - <%= bebox.longitude %> ;
+           origin[i] =  position.coords.latitude - <%= bebox.laltitude %> + position.coords.longitude - <%= bebox.longitude %> ;
+           bebox_locations[i] = "<%= bebox.location %>" ;
+           i = i + 1 ;
+        <% end %>
+        indicator.sort(function(a, b){return a-b}); 
+        j = origin.indexOf(indicator[0]);
+        console.log(indicator[0]);    
+        console.log(bebox_locations[j]);
+        return bebox_locations[j];
+    }
 
-    
- initialize();
- TestMarker();
+    initialize();
+    TestMarker();
 </script>
