@@ -9,6 +9,7 @@ body {
 	font-size: 1.25rem;
 	width: calc(100% - 24.5em);
 	color: #676A6C;
+    overflow: scroll;
 
 	.nav {
 		margin-top: 10px;
@@ -126,6 +127,7 @@ body {
 		border-radius: 0;
 		border: none;
 		border-top: 3px solid $gray-lighter;
+        overflow: scroll;
 
 		.panel-heading,
 		.panel-footer {
