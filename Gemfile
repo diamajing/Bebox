@@ -16,9 +16,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise'
 
-
+gem 'font-awesome-sass'
 gem "chartkick"
 gem 'groupdate'
+
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'font-awesome-sass'	# Frontend: Font Awesome is awesome!

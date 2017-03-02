@@ -1,0 +1,45 @@
+// Place all the styles related to the frontend/shop controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Font awesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// layout scss
+
+.shop-header{
+	height: 75vh;
+	background-image: url(<%= image_path('shop-background.jpg') %>);
+	background-size: cover;
+	background-position: bottom;
+	position: relative;
+
+	.shop-title{
+		position: absolute;
+		bottom: 0;
+		margin: auto;
+		padding-bottom: 12px;
+		font-size: 4em;
+		color: white;
+		width: 100%;
+		font-weight: 100;
+		line-height: 52px;
+
+		.text{
+			color: #ffac30;
+
+			.title{
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+//product overview scss (shop index)
+
+.products-overview{
+	width: 100%;
+	margin-top: 60px;
+
+}

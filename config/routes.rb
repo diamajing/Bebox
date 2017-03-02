@@ -5,6 +5,7 @@ Rails.application.routes.draw do
  get 'prix', to: 'frontend/pages#price', as: 'price'
 
  get 'maps', to: 'frontend/pages#maps', as: 'maps'
+ get 'shop', to: 'frontend/shop#index', as: 'shop'
 
   namespace :frontend do 
     resources :contacts
