@@ -2,12 +2,12 @@ class Frontend::PagesController < ApplicationController
 	layout 'pricelayout'
 	
 	def price
-        @contactp = Contact.new
+        @contact = Contact.new
 	end
 	
     def create
-        @contactp = Contact.new(contact_params)
-        if @contactp.save
+        @contact = Contact.new(contact_params)
+        if @contact.save
           redirect_to  root_path ,notice: "Demande envoyée. Nous vous contacterons bientot!"
         else
 

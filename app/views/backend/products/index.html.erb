@@ -1,0 +1,37 @@
+<% content_for :pagename, "Products" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Products" %>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Produits <span class="badge"><%= @products.count %></span></h3>
+    <%= link_to icon("plus-circle"), new_backend_product_path, class:"btn" %>
+    </div>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-condensed table-bordered table-striped table-hover">
+            <thead>
+              <tr>    
+                <th>Name</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>foto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @products.each do |product| %>
+                <tr>
+                  <td><%= link_to product.name, backend_product_path(product) %></td>
+                  <td><%= product.description %></td>
+                  <td><%= product.price %></td>
+                  <td><%= image_tag product.image.url, width: 75 %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>

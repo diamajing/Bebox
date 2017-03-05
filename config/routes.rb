@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
  get 'maps', to: 'frontend/pages#maps', as: 'maps'
  get 'shop', to: 'frontend/shop#index', as: 'shop'
+ get 'shop/products/:id', to: "frontend/shop#show", as: 'shop_product'
+ get 'order', to: "frontend/shop#order" , as: 'order_path'
+ post 'confirm_order', to: 'frontend/shop#confirm_order'
+ get 'thanks', to: 'frontend/shop#thanks'
 
+  
   namespace :frontend do 
     resources :contacts
   end
@@ -18,6 +23,7 @@ Rails.application.routes.draw do
     resources :beboxs 
     resources :parts
     resources :maintenances
+    resources :products
     get "maintenances/note", to: "maintenances#note", as: "note"
     get "maintenances/new2", to: "maintenances#new2"
   end
