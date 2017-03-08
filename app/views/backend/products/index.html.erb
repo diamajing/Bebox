@@ -19,6 +19,7 @@
                 <th>Description</th>
                 <th>Prix</th>
                 <th>foto</th>
+                <th>Supprimer</th>
               </tr>
             </thead>
             <tbody>
@@ -28,6 +29,11 @@
                   <td><%= product.description %></td>
                   <td><%= product.price %></td>
                   <td><%= image_tag product.image.url, width: 75 %></td>
+                  <td>
+                    <%= link_to  backend_product_path(product) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+                      <i class="fa fa-trash fa-3x trash" aria-hidden="true"></i>
+                    <% end -%>
+                  </td>
                 </tr>
               <% end %>
             </tbody>

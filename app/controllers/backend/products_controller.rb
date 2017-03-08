@@ -16,6 +16,15 @@ class Backend::ProductsController < BackendController
         end 
     end
 
+    def destroy
+        product = Product.find(params[:id])
+        if product.destroy
+            redirect_to backend_products_path, notice: "Produit Supprime avec succes"
+        else
+            redirect_to backend_products_path, alert: "Une erreur s'est produite veuillez reessayer"
+        end
+    end
+
     private
 
     def product_params
