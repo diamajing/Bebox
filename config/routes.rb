@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :parts
     resources :maintenances
     resources :products
+    resources :visits
     get "maintenances/note", to: "maintenances#note", as: "note"
     get "maintenances/new2", to: "maintenances#new2"
   end

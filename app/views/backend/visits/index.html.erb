@@ -1,0 +1,43 @@
+<% content_for :pagename, "Gestion Commerciale" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "gestion commerciale" %>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Visites Commerciales <span class="badge"><%= @visits.count %></span></h3>
+    <%= link_to icon("plus-circle"), new_backend_visit_path, class:"btn" %>
+    </div>
+
+    <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-condensed table-bordered table-striped table-hover">
+            <thead>
+              <tr>    
+                <th>Nom client</th>
+                <th>Lieu</th>
+                <th>Telephone</th>
+                <th>Rapport</th>
+                <th>Supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @visits.each do |visit| %>
+                <tr>
+                  <td><%= link_to visit.customer_name, backend_visit_path(visit) %></td>
+                  <td><%= visit.location %></td>
+                  <td><%= visit.telephone %></td>
+                  <td><%= visit.report %></td>
+                  <td>
+                    <%= link_to  backend_visit_path(visit) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+                      <i class="fa fa-trash fa-3x trash" aria-hidden="true"></i>
+                    <% end -%>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
