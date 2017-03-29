@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  get 'prix', to: 'frontend/pages#price', as: 'price'
 
  get 'maps', to: 'frontend/pages#maps', as: 'maps'
- get 'app', to: 'frontend/pages#maps', as: 'maps'
+ get 'app', to: 'frontend/pages#maps', as: 'app'
  get 'shop', to: 'frontend/shop#index', as: 'shop'
  get 'shop/products/:id', to: "frontend/shop#show", as: 'shop_product'
  get 'order', to: "frontend/shop#order" , as: 'order_path'
