@@ -57,7 +57,7 @@
             myPosition.setMap(map);
             document.getElementById("nearest-bebox-description").innerHTML = "La Bebox la plus proche est au ";
             document.getElementById("nearest-bebox").innerHTML = findNearestBebox(position);
-         });
+         }, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
         }
     }
 
@@ -78,8 +78,7 @@
             marker<%= bebox.id %> = new google.maps.Marker({
             position: location<%= bebox.id %>,
             map: map,
-            icon: "<%= image_path 'rsz_2logo.png' %>"  ,
-            animation: google.maps.Animation.BOUNCE
+            icon: "<%= image_path 'rsz_2logo.png' %>"     
         });
         
         marker<%= bebox.id %>.addListener('click', function() {
