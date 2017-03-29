@@ -1,0 +1,7 @@
+<% content_for :pagename, "Ajouter une visite" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "gestion commerciale", backend_visits_path %>
+  <%= bc_link "nouvelle visite" %>
+<% end %>
+<%= render 'form' , customer: @visit %>
