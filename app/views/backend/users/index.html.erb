@@ -1,0 +1,46 @@
+<% content_for :pagename, "Users" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Users" %>
+<% end %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Users <span class="badge"><%= @users.count %></span></h3>
+    <% link_to icon("plus-circle"), new_user_registration_path, class:"btn" %>
+    <%= link_to new_user_registration_path do %>
+        
+        <i class="fa fa-plus-circle fa-2x trash " aria-hidden="true"></i>
+      <% end -%>
+  </div>
+  <div class="panel-body">
+    
+  </div>
+
+<div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+          
+            <th>Nom et prenom</th>
+            <th>Email</th>
+            <th>Fonction</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= link_to user.name, backend_users_path(user) %></td>
+              <td><%= user.email %></td>
+              <td><%= user.function %></td>
+              
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
