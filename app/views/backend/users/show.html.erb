@@ -1,0 +1,27 @@
+<% content_for :pagename, "Admin Users" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "Admin Users", backend_users_path%>
+  <%= bc_link @contacts.name %>
+<% end %>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Profile <%= @user.name %><span class="badge"></span></h3>
+        <%= link_to backend_user_path(@user) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+            <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
+        <% end -%>
+    </div>
+    <div class="panel-body">
+        <div class="col-xs-12 col-md-6">
+            <dl class="dl-horizontal">
+                <dt>Nom et prenom:</dt>
+                <dd><%= @user.name %></dd>
+                <dt>Email:</dt>
+                <dd><%= @user.email %></dd>
+                <dt>Fonction:</dt>
+                <dd><%= @user.function %></dd>
+            </dl>
+        </div>  
+    </div>
+</div>
