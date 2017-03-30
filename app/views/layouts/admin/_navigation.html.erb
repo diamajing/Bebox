@@ -4,7 +4,7 @@
     <div class="profile">
       <strong>Amine Belkhiria</strong>
       <small>amine.belkhiria@yahoo.fr</small><br>
-      <small> <%= link_to "Abmelden" %></small>
+      <small> <%= link_to "Abmelden",  destroy_user_session_path, method: :delete %></small>
     </div>
     <% if Rails.env.staging? %>
       (STAGING)

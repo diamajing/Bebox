@@ -1,0 +1,39 @@
+<% content_for :pagename, "Admin users" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "users", backend_beboxs_path%>
+  <%= bc_link @user.email %>
+  <%= bc_link "edit" %>
+<% end %>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">User <span class="badge"></span></h3>
+  </div>
+  <div class="panel-body">
+    <div class="row container">
+            <%=form_for [:backend,@user] , :html => {class: 'form-horizontal col-xs-12 col-sm-4 col-sm-offset-4' } do |f| %>
+            
+                <div class="form-group">
+                    <%= f.label :name, class: "" %>
+                    <%= f.text_field :name, placeholder:"Nom et Prenom" ,class: "form-control transparent",rows: 3 %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :email, class: "" %>
+                    <%= f.text_field :email, placeholder:"email", class: "form-control ", rows: 3, required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :fonction, class: "" %>
+                    <%= f.select(:function, User.functions.keys.to_a,{}, {:class => "form-control btn btn-default dropdown-toggle"})%>
+                </div>
+                <%= f.submit "Modifier", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
+            <% end %>
+        </div>
+  </div>
+</div>
+
+
+

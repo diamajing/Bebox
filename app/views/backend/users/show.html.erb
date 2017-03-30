@@ -2,7 +2,7 @@
 <% content_for :breadcrumb do %>
   <%= bc_link "Home", admin_path %>
   <%= bc_link "Admin Users", backend_users_path%>
-  <%= bc_link @contacts.name %>
+  <%= bc_link @user.name %>
 <% end %>
 
 <div class="panel panel-default">
@@ -11,6 +11,9 @@
         <%= link_to backend_user_path(@user) , method: :delete , data: {confirm: "etes vous sure?"} do %>
             <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
         <% end -%>
+        <%= link_to edit_backend_user_path(@user) do %>
+            <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
+        <%end%>
     </div>
     <div class="panel-body">
         <div class="col-xs-12 col-md-6">
