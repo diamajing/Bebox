@@ -1,0 +1,33 @@
+<% content_for :pagename, "Gestion Commerciale" %>
+<% content_for :breadcrumb do %>
+  <%= bc_link "Home", admin_path %>
+  <%= bc_link "gestion commerciale", admin_path %>
+  <%= bc_link @visits.customer_name %>
+<% end %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Profile <%=  @visits.customer_name %><span class="badge"></span></h3>
+      <%= link_to  backend_visit_path(@visits) , method: :delete , data: {confirm: "etes vous sure?"} do %>
+        <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
+      <% end -%>
+      <%= link_to edit_backend_visit_path(@visits) do %>
+      <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
+      <%end%>
+  </div>
+  
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Customer Name:</dt>
+      <dd><%= @visits.customer_name %></dd>
+      <dt>Telephone:</dt>
+     
+      <dd><%= @visits.telephone %></dd>
+      <dt>Location:</dt>
+      <dd><%= @visits.location %></dd>
+      <dt>Report:</dt>
+      <dd><%= @visits.report %></dd>
+    </dl>
+  </div>
+</div>
