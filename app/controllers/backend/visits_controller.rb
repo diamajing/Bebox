@@ -45,6 +45,6 @@ class Backend::VisitsController < BackendController
 	private
 
 	def visit_params
-  		params.require(:visit).permit(:customer_name, :telephone , :location , :report)
+  		params.require(:visit).permit(:customer_name, :telephone , :location , :report, :user_id)
   	end
 end

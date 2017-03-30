@@ -23,6 +23,7 @@
                     <%= f.label :rapport, class: "" %>
                     <%= f.text_area :report, placeholder:"Rapport de la visite", class: "form-control transparent",rows: 5, required: true %>
                 </div>
+                    <%= f.hidden_field :user_id, :value => current_user.id %>
                 
                     <%= f.submit "Ajouter", class: "col-xs-8 col-xs-offset-2 btn btn-danger" %>
             <% end %>
