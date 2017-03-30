@@ -33,7 +33,7 @@
         <tbody>
           <% @users.each do |user| %>
             <tr>
-              <td><%= link_to user.name, backend_users_path(user) %></td>
+              <td><%= link_to user.name, backend_user_path(user) %></td>
               <td><%= user.email %></td>
               <td><%= user.function %></td>
               
