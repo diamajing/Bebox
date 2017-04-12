@@ -11,9 +11,13 @@
         <%= link_to backend_user_path(@user) , method: :delete , data: {confirm: "etes vous sure?"} do %>
             <i class="fa fa-trash fa-2x trash" aria-hidden="true"></i>
         <% end -%>
-        <%= link_to edit_backend_user_path(@user) do %>
-            <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
-        <%end%>
+        <% if false %>
+            <%= link_to edit_backend_user_path(@user) do %>
+                <i class="fa fa-pencil fa-2x pancel" aria-hidden="true"></i>
+            <%end%>
+        <% end -%>
+        <!-- Trigger the modal with a button -->
+        <a type="button" class="fa fa-pencil fa-2x pancel" data-toggle="modal" data-target="#myModal"></a>
     </div>
     <div class="panel-body">
         <div class="col-xs-12 col-md-6">
@@ -27,4 +31,33 @@
             </dl>
         </div>  
     </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="z-index: 9999;margin-top:120px;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Entrez le mot de passe Bebox system</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag(edit_user_path, :method=>'post', class: "text-center") do %>
+          <p>
+            <%= password_field_tag "token" %>
+            <%= hidden_field_tag "user_id", @user.id %>
+          </p>
+          <p>
+            <%= submit_tag 'Suivant', class: "btn btn-default"  %>
+          </p>
+        <% end -%>
+      </div>
+    </div>
+
+  </div>
 </div>

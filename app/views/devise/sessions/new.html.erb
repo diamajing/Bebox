@@ -1,60 +1,63 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
 
-<style type="text/css">
-  
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+          
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <style type="text/css">
+    h2{
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="valign-wrapper" style="height:100vh;">
+          <div class="valign" style="width:100%;">
+            <div class="col s12 m4 offset-m4 center-align">
+              <h3 style="margin-bottom:45px;">Se Connecter</h3>
 
-.log-in{
-  width: 700px;
-  margin:auto;
-  text-align:center;
-  padding-top:10%;
-  font-family: 'Roboto', Arial, sans-serif;
-}
- 
-.panel-heading{
-  background-color:#fff;
-}
- 
-.form-control{
-  width: 500px;
-  text-align: center;
-  margin:auto;
-}
- 
-.panel-body p{
-  color:#555;
-}
-</style>
+              <%= form_for(resource,as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true ,class: "form-control transparent"%>
+                </div>
 
-<div class="container log-in">
-<div class="panel panel-default">
-<div class="panel-heading">
-<h2>Log in</h2>
-</div>
-<div class="panel-body">
-<%= form_for(resource,as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true ,class: "form-control transparent"%>
-  </div>
+                <div class="form-group">
+                  <%= f.label :password %><br />
+                  <%= f.password_field :password, autocomplete: "off",class: "form-control transparent" %>
+                </div>
 
-  <div class="form-group">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off",class: "form-control transparent" %>
-  </div>
+                <% if devise_mapping.rememberable? -%>
+                  <div class="form-group">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div>
+                <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+                <div class="actions" style="margin-top:25px;margin-bottom:25px;">
+                  <%= f.submit "Log in"  ,class:"waves-effect waves-light btn amber accent-3"%>
+                </div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end -%>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  </body>
+</html>
 
-  <div class="actions">
-    <%= f.submit "Log in"  ,class:"btn btn-default btn-lg btn-block"%>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-</div>
-</div>
-</div>

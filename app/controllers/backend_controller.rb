@@ -1,6 +1,7 @@
 class BackendController < ApplicationController
 	layout "backend"
-    http_basic_authenticate_with name: "info@mybebox.tn", password: "beboxkey"
+    #http_basic_authenticate_with name: "info@mybebox.tn", password: "beboxkey"
+    before_action :authenticate_user!
 
 	def index
         @maintenances= Maintenance.where(todo: "1").all

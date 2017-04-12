@@ -2,9 +2,9 @@
   <div class="profile col-md-12">
     <%= image_tag "logo.png", class: "image", width: 50%>
     <div class="profile">
-      <strong>Amine Belkhiria</strong>
-      <small>amine.belkhiria@yahoo.fr</small><br>
-      <small> <%= link_to "Abmelden",  destroy_user_session_path, method: :delete %></small>
+      <strong><%= current_user.name %></strong>
+      <small><%= current_user.email %></small><br>
+      <small> <%= link_to "Se deconnecter",  destroy_user_session_path, method: :delete %></small>
     </div>
     <% if Rails.env.staging? %>
       (STAGING)
@@ -13,12 +13,17 @@
 </div>
 <ul>
     <li><%= link_to "Tableau de bord", admin_path, class: "fa fa-pie-chart #{menu_active("backend", action_name == 'index')}" %></li>
-    <li><%= link_to "Clients",  backend_customers_path, class: "fa fa-users #{menu_active("customers")}" %></li>
-    <li><%= link_to "Beboxes",  backend_beboxs_path, class: "fa fa-th-large #{menu_active("beboxs")}" %></li>
-    <li><%= link_to "Maintenances",  backend_maintenances_path, class: "fa fa-cog #{menu_active("maintenances")}" %></li>
-    <li><%= link_to "Commercial",  backend_visits_path, class: "fa fa-briefcase #{menu_active("visits")}" %></li>
-    <li><%= link_to "Inventaire", inventory_path, class: "fa fa-cubes #{menu_active("backend", action_name == 'inventory')}" %></li>
-    <li><%= link_to "Contacts",  backend_contacts_path, class: "fa fa-user-plus #{menu_active("contacts")}" %></li>
-    <li><%= link_to "Products",  backend_products_path, class: "fa fa-shopping-cart #{menu_active("products")}" %></li>
-    <li><%= link_to "Admin Users",  backend_users_path, class: "fa fa-user-plus #{menu_active("contacts")}" %></li>
+    <% if current_user.function == 'admin' %>
+      <li><%= link_to "Clients",  backend_customers_path, class: "fa fa-users #{menu_active("customers")}" %></li>
+      <li><%= link_to "Beboxes",  backend_beboxs_path, class: "fa fa-th-large #{menu_active("beboxs")}" %></li>
+      <li><%= link_to "Maintenances",  backend_maintenances_path, class: "fa fa-cog #{menu_active("maintenances")}" %></li>
+      <li><%= link_to "Commercial",  backend_visits_path, class: "fa fa-briefcase #{menu_active("visits")}" %></li>
+      <li><%= link_to "Inventaire", inventory_path, class: "fa fa-cubes #{menu_active("backend", action_name == 'inventory')}" %></li>
+      <li><%= link_to "Contacts",  backend_contacts_path, class: "fa fa-user-plus #{menu_active("contacts")}" %></li>
+      <li><%= link_to "Products",  backend_products_path, class: "fa fa-shopping-cart #{menu_active("products")}" %></li>
+    <% end %>
+    <% if current_user.function == 'commercial' %>
+      <li><%= link_to "Commercial",  backend_visits_path, class: "fa fa-briefcase #{menu_active("visits")}" %></li>
+    <% end %>
+    <li><%= link_to "Admin Users",  backend_users_path, class: "fa fa-user-plus #{menu_active("users")}" %></li>
 </ul>
