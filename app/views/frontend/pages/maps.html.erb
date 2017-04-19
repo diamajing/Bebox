@@ -24,7 +24,7 @@
     }
 </style>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAioJiUs5vlpBSiWUsEIEgDP3NK_bUNP_s&sensor=true"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHfU3dcVZ0O9hd2aaF970eypfh17cEnxE"></script>
 <script type="text/javascript">
     
 
@@ -59,7 +59,7 @@
             myPosition.setMap(map);
             document.getElementById("nearest-bebox-description").innerHTML = "La Bebox la plus proche est au ";
             document.getElementById("nearest-bebox").innerHTML = findNearestBebox(position);
-         }, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
+         });
         }
     }
 
