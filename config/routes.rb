@@ -39,4 +39,5 @@ Rails.application.routes.draw do
     get "management", to: "backend#index", as: "user_root"
     get "backend/inventory", to: "backend#inventory", as: "inventory"
     post "edit_user", to: "backend/users#check_pw", as: "edit_user"
+    get 'test', to: 'frontend#test', as: 'test'
 end
